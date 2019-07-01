@@ -16,10 +16,10 @@ public class MainActivity extends AppCompatActivity {
 
     public void basicBtn(View view) {
         TextView lb = findViewById(R.id.labelHello);
-        if (lb.getText().equals(R.string.hello_world)) {
-            lb.setText(R.string.goodbye_world);
+        if (lb.getText().equals(getResources().getString(R.string.hello_world))) {
+            lb.setText(getResources().getString(R.string.goodbye_world));
         } else {
-            lb.setText(R.string.hello_world);
+            lb.setText(getResources().getString(R.string.hello_world));
         }
     }
 }
