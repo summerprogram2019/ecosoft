@@ -21,7 +21,5 @@ public class MainActivity extends AppCompatActivity {
         } else {
             lb.setText(R.string.hello_world);
         }
-
-        new lombokexample("foo","bar");
     }
 }
