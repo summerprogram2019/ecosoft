@@ -69,3 +69,9 @@ fastlane/screenshots
 fastlane/test_output
 fastlane/readme.md
 
+
+\.idea/copyright/profiles_settings\.xml
+
+\.idea/scopes/scope_settings\.xml
+
+\.idea/compiler\.xml
