@@ -1,5 +1,6 @@
 language: android
 dist: trusty
+sudo: false
 before_cache:
   - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
   - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
@@ -43,7 +44,3 @@ before_script:
   - emulator -avd test -no-skin -no-audio -no-window &
   - android-wait-for-emulator
   - adb shell input keyevent 82 &
-
-script:
-  - android list target
-  - ./gradlew connectedAndroidTest
