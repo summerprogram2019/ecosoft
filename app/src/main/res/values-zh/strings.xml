@@ -3,9 +3,9 @@
     <string name="app_name">CTrack</string>
     <string name="goodbye_world">"世界再见 "</string>
     <string name="hello_world">你好，世界</string>
-    <string name="new_account"></string>
-    <string name="log_in"></string>
-    <string name="user_name"></string>
-    <string name="password"></string>
-    <string name="logo"></string>
+    <string name="new_account">新账户</string>
+    <string name="log_in">登录</string>
+    <string name="user_name">用户名</string>
+    <string name="password">密码</string>
+    <string name="logo">商标</string>
 </resources>
