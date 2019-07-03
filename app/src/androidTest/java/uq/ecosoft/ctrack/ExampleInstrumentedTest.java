@@ -2,7 +2,6 @@ package uq.ecosoft.ctrack;
 
 import android.content.Context;
 
-import androidx.test.InstrumentationRegistry;
 import androidx.test.core.app.ApplicationProvider;
 import androidx.test.runner.AndroidJUnit4;
 
