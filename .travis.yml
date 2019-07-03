@@ -45,7 +45,7 @@ install:
   # - adb shell input keyevent 82 &
 
 script:
-   - ./gradlew clean build findbugs
+   - ./gradlew clean build check
 
 before_cache:
   - rm -f $HOME/.gradle/caches/modules-2/modules-2.lock
