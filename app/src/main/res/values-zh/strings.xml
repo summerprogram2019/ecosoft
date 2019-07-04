@@ -5,7 +5,30 @@
     <string name="hello_world">你好，世界</string>
     <string name="new_account">新账户</string>
     <string name="log_in">登录</string>
-    <string name="user_name">用户名</string>
+    <string name="user_name">用户名/邮件</string>
     <string name="password">密码</string>
     <string name="logo">商标</string>
+    <string-array name="activities">
+        <item>步跟踪</item>
+        <item>目标</item>
+        <item>每日挑战</item>
+        <item>未来活动</item>
+    </string-array>
+    <string name="terms_conditions">接受条款和条件</string>
+    <string name="verify">确认</string>
+    <string name="username">用户名</string>
+    <string name="email">电子邮件</string>
+    <string name="verification_code">输入验证码</string>
+    <string name="home">主页</string>
+    <string name="profile">我</string>
+    <string name="activities">活动</string>
+    <string name="social">交流</string>
+    <string name="article_name">文章名</string>
+    <string name="info">资料</string>
+    <string name="like">喜欢</string>
+    <string name="step_tracking">步跟踪</string>
+    <string name="goals">目标</string>
+    <string name="challenges">每日挑战</string>
+    <string name="future_activities">未来活动</string>
+    <string name="back">回去</string>
 </resources>

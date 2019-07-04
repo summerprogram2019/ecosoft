@@ -7,4 +7,21 @@
     <string name="user_name">User name or email</string>
     <string name="password">Password</string>
     <string name="logo">Logo</string>
+    <string name="terms_conditions">Accept Terms and Conditions</string>
+    <string name="verify">Verify</string>
+    <string name="username">User Name</string>
+    <string name="email">Email</string>
+    <string name="verification_code">Enter Verification Code</string>
+    <string name="home">Home</string>
+    <string name="profile">Profile</string>
+    <string name="activities">Activities</string>
+    <string name="social">Social</string>
+    <string name="article_name">Article Name</string>
+    <string name="info">Info</string>
+    <string name="like">Like</string>
+    <string name="step_tracking">Step Tracking</string>
+    <string name="goals">Goals</string>
+    <string name="challenges">Daily Challenges</string>
+    <string name="future_activities">Future Activities</string>
+    <string name="back">Back</string>
 </resources>
