@@ -40,7 +40,7 @@ CREATE TABLE IF NOT EXISTS `friends` (
   KEY `FK_friends_user_2` (`user2`),
   CONSTRAINT `FK_friends_user` FOREIGN KEY (`user1`) REFERENCES `user` (`uid`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FK_friends_user_2` FOREIGN KEY (`user2`) REFERENCES `user` (`uid`)
-) COMMENT='If you wanna get with my lover; ya gotta get with my friends!';
+) COMMENT='Keeps track of friendships. Friendships should be stored as two-way relationships.';
 
 CREATE TABLE IF NOT EXISTS `garden` (
   `uid` int(11) NOT NULL,
