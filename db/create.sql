@@ -6,7 +6,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `username` varchar(32) NOT NULL,
   `password` varchar(64) NOT NULL,
   PRIMARY KEY (`uid`),
-  UNIQUE KEY `Username Unique` (`username`(16))
+  UNIQUE KEY `UNQ_Username` (`username`(16))
 ) COMMENT='Stores the basic user identification settings such as username and password. These are primarily used for login.';
 
 CREATE TABLE IF NOT EXISTS `activities` (
@@ -37,9 +37,10 @@ CREATE TABLE IF NOT EXISTS `friends` (
   `user1` int(12) NOT NULL,
   `user2` int(12) NOT NULL,
   PRIMARY KEY (`user1`,`user2`),
+  KEY `FK_friends_user_1` (`user1`),
   KEY `FK_friends_user_2` (`user2`),
   CONSTRAINT `FK_friends_user` FOREIGN KEY (`user1`) REFERENCES `user` (`uid`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `FK_friends_user_2` FOREIGN KEY (`user2`) REFERENCES `user` (`uid`)
+  CONSTRAINT `FK_friends_user_2` FOREIGN KEY (`user2`) REFERENCES `user` (`uid`) ON DELETE CASCADE ON UPDATE CASCADE
 ) COMMENT='Keeps track of friendships. Friendships should be stored as two-way relationships.';
 
 CREATE TABLE IF NOT EXISTS `garden` (
@@ -73,6 +74,7 @@ CREATE TABLE IF NOT EXISTS `settings` (
   `setting` varchar(64) NOT NULL,
   `state` boolean NOT NULL,
   PRIMARY KEY (`uid`,`setting`(16)),
+  KEY `FK__settings_user` (`uid`),
   CONSTRAINT `FK__user` FOREIGN KEY (`uid`) REFERENCES `user` (`uid`) ON DELETE CASCADE ON UPDATE CASCADE
 ) COMMENT='Store user privacy settings';
 
