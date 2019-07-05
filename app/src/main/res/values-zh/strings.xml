@@ -31,4 +31,9 @@
     <string name="challenges">每日挑战</string>
     <string name="future_activities">未来活动</string>
     <string name="back">回去</string>
+    <string name="leader_board">排行榜</string>
+    <string name="friends">朋友</string>
+    <string name="add_friends">加朋友</string>
+    <string name="manage_friends">管理朋友</string>
+    <string name="garden">花园</string>
 </resources>

@@ -31,4 +31,9 @@
     <string name="challenges">Daily Challenges</string>
     <string name="future_activities">Future Activities</string>
     <string name="back">Back</string>
+    <string name="leader_board">Leaderboard</string>
+    <string name="friends">Friends</string>
+    <string name="add_friends">Add Friends</string>
+    <string name="manage_friends">Manage Friends</string>
+    <string name="garden">Garden</string>
 </resources>

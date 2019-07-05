@@ -7,10 +7,25 @@
     android:layout_height="match_parent"
     android:background="#4CAF50">
 
+    <TextView
+        android:id="@+id/labelTitle"
+        android:layout_width="150dp"
+        android:layout_height="79dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/profile"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.391"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.049" />
+
     <ImageView
         android:id="@+id/imageHome"
         android:layout_width="54dp"
-        android:layout_height="47dp"
+        android:layout_height="38dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="28dp"
@@ -23,8 +38,7 @@
         app:layout_constraintHorizontal_bias="0.024"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.965"
-        tools:srcCompat="@tools:sample/avatars[0]" />
+        app:layout_constraintVertical_bias="0.965" />
 
     <TextView
         android:id="@+id/labelHome"
@@ -44,6 +58,7 @@
 
     <ImageView
         android:id="@+id/imageActivities"
+        tools:srcCompat="@drawable/Artboard 2"
         android:layout_width="54dp"
         android:layout_height="47dp"
         android:layout_marginStart="8dp"
@@ -58,8 +73,7 @@
         app:layout_constraintHorizontal_bias="0.269"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.965"
-        tools:srcCompat="@tools:sample/avatars[0]" />
+        app:layout_constraintVertical_bias="0.965" />
 
     <TextView
         android:id="@+id/labelActivities"
@@ -80,6 +94,7 @@
 
     <ImageView
         android:id="@+id/imageSocial"
+        tools:srcCompat="@drawable/Artboard 4"
         android:layout_width="54dp"
         android:layout_height="47dp"
         android:layout_marginStart="8dp"
@@ -94,8 +109,7 @@
         app:layout_constraintHorizontal_bias="0.563"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.965"
-        tools:srcCompat="@tools:sample/avatars[0]" />
+        app:layout_constraintVertical_bias="0.965" />
 
     <TextView
         android:id="@+id/labelSocial"
@@ -115,6 +129,7 @@
 
     <ImageView
         android:id="@+id/imageProfile"
+        tools:srcCompat="@drawable/Artboard 3"
         android:layout_width="54dp"
         android:layout_height="47dp"
         android:layout_marginStart="8dp"
@@ -129,8 +144,7 @@
         app:layout_constraintHorizontal_bias="0.879"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.965"
-        tools:srcCompat="@tools:sample/avatars[0]" />
+        app:layout_constraintVertical_bias="0.965" />
 
     <TextView
         android:id="@+id/labelProfile"
@@ -141,6 +155,7 @@
         android:layout_marginBottom="8dp"
         android:clickable="true"
         android:focusable="true"
+        android:focusableInTouchMode="false"
         android:text="@string/profile"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -149,69 +164,37 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.995" />
 
-    <Spinner
-        android:id="@+id/spinnerDropDown"
-        android:layout_width="262dp"
-        android:layout_height="37dp"
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="227dp"
+        android:layout_height="342dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:entries="@array/activities"
+        android:clickable="true"
+        android:focusable="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.368"
+        app:layout_constraintHorizontal_bias="0.369"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.222" />
-
-    <ImageButton
-        android:id="@+id/imageBack"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:background="#00FFFFFF"
-        android:contentDescription="@string/back"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.046"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.076"
-        app:srcCompat="@android:drawable/ic_menu_revert" />
+        app:layout_constraintVertical_bias="0.621"
+        app:srcCompat="@drawable/tree" />
 
     <TextView
-        android:id="@+id/labelChallenge"
-        android:layout_width="145dp"
-        android:layout_height="64dp"
+        android:id="@+id/labelImpact"
+        android:layout_width="200dp"
+        android:layout_height="55dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:text="Challenge Details"
+        android:text="Environmental Impact"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.396"
+        app:layout_constraintHorizontal_bias="0.251"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.388" />
-
-    <TextView
-        android:id="@+id/labelTitle"
-        android:layout_width="150dp"
-        android:layout_height="79dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:text="@string/challenges"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.444"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.049" />
-
+        app:layout_constraintVertical_bias="0.219" />
 </androidx.constraintlayout.widget.ConstraintLayout>
