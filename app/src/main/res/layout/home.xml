@@ -15,6 +15,7 @@
         android:layout_marginBottom="8dp"
         android:clickable="true"
         android:focusable="true"
+        android:onClick="linkToHome"
         android:text="@string/home"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -33,6 +34,7 @@
         android:clickable="true"
         android:focusable="true"
         android:focusableInTouchMode="false"
+        android:onClick="linkToProfile"
         android:text="@string/profile"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -52,13 +54,14 @@
         android:clickable="true"
         android:contentDescription="@string/profile"
         android:focusable="true"
+        android:onClick="linkToProfile"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.879"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.965"
-        tools:srcCompat="@drawable/Artboard 3" />
+        tools:srcCompat="@drawable/black_profile" />
 
     <ImageView
         android:id="@+id/imageSocial"
@@ -71,32 +74,35 @@
         android:clickable="true"
         android:contentDescription="@string/social"
         android:focusable="true"
+        android:onClick="linkToSocial"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.563"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.965"
-        tools:srcCompat="@drawable/Artboard 4" />
+        tools:srcCompat="@drawable/black_social" />
 
     <ImageView
         android:id="@+id/imageHome"
-        android:layout_width="54dp"
-        android:layout_height="38dp"
+        android:layout_width="60dp"
+        android:layout_height="52dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="28dp"
         android:layout_marginBottom="8dp"
+        android:background="#FFFFFF"
         android:clickable="true"
         android:contentDescription="@string/home"
         android:focusable="true"
+        android:onClick="linkToHome"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.024"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.965"
-        tools:srcCompat="@drawable/Artboard 1@3x" />
+        tools:srcCompat="@drawable/green_home" />
 
     <ImageView
         android:id="@+id/imageActivities"
@@ -109,13 +115,14 @@
         android:clickable="true"
         android:contentDescription="@string/activities"
         android:focusable="true"
+        android:onClick="linkToActivities"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.269"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.965"
-        tools:srcCompat="@drawable/Artboard 2" />
+        tools:srcCompat="@drawable/black_activities" />
 
     <TextView
         android:id="@+id/labelActivities"
@@ -126,6 +133,7 @@
         android:layout_marginEnd="8dp"
         android:clickable="true"
         android:focusable="true"
+        android:onClick="linkToActivities"
         android:text="@string/activities"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -142,6 +150,7 @@
         android:layout_marginBottom="8dp"
         android:clickable="true"
         android:focusable="true"
+        android:onClick="linkToSocial"
         android:text="@string/social"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

@@ -49,6 +49,7 @@
         android:layout_marginBottom="8dp"
         android:background="#00FFFFFF"
         android:contentDescription="@string/back"
+        android:onClick="linkToActivities"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.046"
@@ -68,13 +69,14 @@
         android:clickable="true"
         android:contentDescription="@string/home"
         android:focusable="true"
+        android:onClick="linkToHome"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.024"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.965"
-        tools:srcCompat="@tools:sample/avatars[0]" />
+        tools:srcCompat="@drawable/black_home" />
 
     <TextView
         android:id="@+id/labelHome"
@@ -84,6 +86,7 @@
         android:layout_marginBottom="8dp"
         android:clickable="true"
         android:focusable="true"
+        android:onClick="linkToHome"
         android:text="@string/home"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -94,7 +97,6 @@
 
     <ImageView
         android:id="@+id/imageActivities"
-        tools:srcCompat="@tools:sample/avatars[0]"
         android:layout_width="54dp"
         android:layout_height="47dp"
         android:layout_marginStart="8dp"
@@ -104,12 +106,14 @@
         android:clickable="true"
         android:contentDescription="@string/activities"
         android:focusable="true"
+        android:onClick="linkToActivities"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.269"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.965" />
+        app:layout_constraintVertical_bias="0.965"
+        tools:srcCompat="@drawable/green_activities" />
 
     <TextView
         android:id="@+id/labelActivities"
@@ -120,6 +124,7 @@
         android:layout_marginEnd="8dp"
         android:clickable="true"
         android:focusable="true"
+        android:onClick="linkToActivities"
         android:text="@string/activities"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -130,7 +135,6 @@
 
     <ImageView
         android:id="@+id/imageSocial"
-        tools:srcCompat="@tools:sample/avatars[0]"
         android:layout_width="54dp"
         android:layout_height="47dp"
         android:layout_marginStart="8dp"
@@ -140,12 +144,14 @@
         android:clickable="true"
         android:contentDescription="@string/social"
         android:focusable="true"
+        android:onClick="linkToSocial"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.563"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.965" />
+        app:layout_constraintVertical_bias="0.965"
+        tools:srcCompat="@drawable/black_social" />
 
     <TextView
         android:id="@+id/labelSocial"
@@ -155,6 +161,7 @@
         android:layout_marginBottom="8dp"
         android:clickable="true"
         android:focusable="true"
+        android:onClick="linkToSocial"
         android:text="@string/social"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -165,7 +172,6 @@
 
     <ImageView
         android:id="@+id/imageProfile"
-        tools:srcCompat="@tools:sample/avatars[0]"
         android:layout_width="54dp"
         android:layout_height="47dp"
         android:layout_marginStart="8dp"
@@ -175,12 +181,14 @@
         android:clickable="true"
         android:contentDescription="@string/profile"
         android:focusable="true"
+        android:onClick="linkToProfile"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.879"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.965" />
+        app:layout_constraintVertical_bias="0.965"
+        tools:srcCompat="@drawable/black_social" />
 
     <TextView
         android:id="@+id/labelProfile"
@@ -191,6 +199,7 @@
         android:layout_marginBottom="8dp"
         android:clickable="true"
         android:focusable="true"
+        android:onClick="linkToProfile"
         android:text="@string/profile"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
