@@ -14,18 +14,18 @@ INSERT INTO `activities` (`id`, `name`, `points`) VALUES
 	(4, 'act_bus', 150);
 
 INSERT INTO `articles` (`id`, `title`, `description`, `url`, `date`) VALUES
-	(1, 'Bees & Why They\'re Important', 'Bees are some of the most important creatures in the world.', 'bees.com', '2019-07-04'),
-	(2, 'Polar Bears: Extinction', 'The icecaps are melting and the polar bears are in danger', 'polarbears.com', '2019-07-04'),
-	(3, '10 Facts About Trees', '#7 will surprise you!', 'buzzfeed.com', '2019-07-03'),
-	(4, 'Which type of flower are you?', 'Take this exciting quiz to find out what type of flower you are!', 'buzzfeed.com', '2019-07-02'),
-	(5, 'Stop Burning Paper!', 'Paper fumes are one of the atmosphere\'s biggest killers!', 'trees.com', '2019-06-04');
+	(1, 'Bees & Why They\'re Important', 'Bees are some of the most important creatures in the world.', 'bees.com', '2019-07-04 08:45:00'),
+	(2, 'Polar Bears: Extinction', 'The icecaps are melting and the polar bears are in danger', 'polarbears.com', '2019-07-04 09:45:00'),
+	(3, '10 Facts About Trees', '#7 will surprise you!', 'buzzfeed.com', '2019-07-03 09:45:00'),
+	(4, 'Which type of flower are you?', 'Take this exciting quiz to find out what type of flower you are!', 'buzzfeed.com', '2019-07-02 08:45:00'),
+	(5, 'Stop Burning Paper!', 'Paper fumes are one of the atmosphere\'s biggest killers!', 'trees.com', '2019-06-04 11:45:00');
 
 INSERT INTO `flowers` (`id`, `name`, `price`, `instore`) VALUES
-	(1, 'Sunflower', 250, 'T'),
-	(2, 'Dragonbreeze', 600, 'F'),
-	(3, 'Rose', 300, 'T'),
-	(4, 'Tulip', 300, 'T'),
-	(5, 'Marigold', 250, 'T');
+	(1, 'Sunflower', 250, 1),
+	(2, 'Dragonbreeze', 600, 0),
+	(3, 'Rose', 300, 1),
+	(4, 'Tulip', 300, 1),
+	(5, 'Marigold', 250, 1);
 
 INSERT INTO `friends` (`user1`, `user2`) VALUES
 	(2, 1),
@@ -67,12 +67,12 @@ INSERT INTO `liked_articles` (`uid`, `article`) VALUES
 	(4, 5);
 
 INSERT INTO `settings` (`uid`, `setting`, `state`) VALUES
-	(1, 'cloud_sync', 'T'),
-	(1, 'private_profile', 'T'),
-	(2, 'cloud_sync', 'T'),
-	(2, 'private_profile', 'F'),
-	(3, 'private_profile', 'F'),
-	(4, 'private_profile', 'F');
+	(1, 'cloud_sync', 1),
+	(1, 'private_profile', 1),
+	(2, 'cloud_sync', 1),
+	(2, 'private_profile', 0),
+	(3, 'private_profile', 0),
+	(4, 'private_profile', 0);
 
 INSERT INTO `user_activities` (`uid`, `activity`, `amount`, `date`) VALUES
 	(1, 1, 7000, '2019-05-12'),
