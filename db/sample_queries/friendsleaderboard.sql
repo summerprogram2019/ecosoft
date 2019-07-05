@@ -1,3 +1,6 @@
+-- Generates a leaderboard of friends
+-- Scores is calculated by: amount of activity * value of activity
+-- This also ensures that the original user is added to the leaderboard
 SELECT u.uid AS 'User', SUM(u.amount * a.points) AS 'Total Score' 
 FROM user_activities u, activities a
 WHERE u.activity = a.id
