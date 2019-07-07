@@ -55,8 +55,24 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.social_friends);
     }
 
+    public void linkToManage(View view) {
+        setContentView(R.layout.social_manage_friends);
+    }
+
     public void linkToProfile(View view) {
         setContentView(R.layout.profile);
+    }
+
+    public void linkToPoints(View view) {
+        setContentView(R.layout.points);
+    }
+
+    public void linkToGarden(View view) {
+        setContentView(R.layout.garden);
+    }
+
+    public void linkToSettings(View view) {
+        setContentView(R.layout.settings);
     }
 
     public void basicBtn(View view) {

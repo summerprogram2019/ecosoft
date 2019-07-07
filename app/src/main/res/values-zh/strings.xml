@@ -36,4 +36,10 @@
     <string name="add_friends">加朋友</string>
     <string name="manage_friends">管理朋友</string>
     <string name="garden">花园</string>
+    <string name="points">环境影响</string>
+    <string name="settings">设置</string>
+    <string-array name="profiles">
+        <item>环境影响</item>
+        <item>花园</item>
+    </string-array>
 </resources>

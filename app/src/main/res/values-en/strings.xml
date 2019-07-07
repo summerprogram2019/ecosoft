@@ -36,4 +36,10 @@
     <string name="add_friends">Add Friends</string>
     <string name="manage_friends">Manage Friends</string>
     <string name="garden">Garden</string>
+    <string name="points">Environmental Impact</string>
+    <string name="settings">Settings</string>
+    <string-array name="profiles">
+        <item>Environmental Impact</item>
+        <item>Garden</item>
+    </string-array>
 </resources>

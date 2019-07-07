@@ -5,241 +5,218 @@
     android:id="@+id/background"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#4CAF50">
+    android:background="#994CAF50"
+    android:textAlignment="center">
+
+    <LinearLayout
+        android:id="@+id/navContainer"
+        android:layout_width="403dp"
+        android:layout_height="84dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:gravity="bottom|center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:id="@+id/homeContainer"
+            android:layout_width="96dp"
+            android:layout_height="80dp"
+            android:orientation="vertical"
+            android:textAlignment="center">
+
+            <ImageView
+                android:id="@+id/imageHome"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:background="#00FFFFFF"
+                android:clickable="true"
+                android:contentDescription="@string/home"
+                android:focusable="true"
+                android:onClick="linkToHome"
+                tools:layout_conversion_absoluteHeight="50dp"
+                tools:layout_conversion_absoluteWidth="50dp"
+                tools:layout_editor_absoluteX="13dp"
+                tools:layout_editor_absoluteY="622dp"
+                tools:srcCompat="@drawable/black_home" />
+
+            <TextView
+                android:id="@+id/labelHome"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:onClick="linkToHome"
+                android:text="@string/home"
+                android:textAlignment="center"
+                tools:layout_conversion_absoluteHeight="20dp"
+                tools:layout_conversion_absoluteWidth="50dp"
+                tools:layout_editor_absoluteX="13dp"
+                tools:layout_editor_absoluteY="680dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/activitiesContainer"
+            android:layout_width="100dp"
+            android:layout_height="80dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageActivities"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:background="#00FFFFFF"
+                android:clickable="true"
+                android:contentDescription="@string/activities"
+                android:focusable="true"
+                android:onClick="linkToActivities"
+                tools:layout_conversion_absoluteHeight="50dp"
+                tools:layout_conversion_absoluteWidth="50dp"
+                tools:layout_editor_absoluteX="109dp"
+                tools:layout_editor_absoluteY="622dp"
+                tools:srcCompat="@drawable/black_activities" />
+
+            <TextView
+                android:id="@+id/labelActivities"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:clickable="true"
+                android:focusable="true"
+                android:onClick="linkToActivities"
+                android:textAlignment="center"
+                tools:layout_conversion_absoluteHeight="20dp"
+                tools:layout_conversion_absoluteWidth="59dp"
+                tools:layout_editor_absoluteX="109dp"
+                tools:layout_editor_absoluteY="688dp"
+                tools:text="@string/activities" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/socialContainer"
+            android:layout_width="100dp"
+            android:layout_height="80dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageSocial"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:background="#FFFFFF"
+                android:clickable="true"
+                android:contentDescription="@string/social"
+                android:focusable="true"
+                android:onClick="linkToSocial"
+                tools:layout_conversion_absoluteHeight="50dp"
+                tools:layout_conversion_absoluteWidth="50dp"
+                tools:layout_editor_absoluteX="209dp"
+                tools:layout_editor_absoluteY="622dp"
+                tools:srcCompat="@drawable/green_social" />
+
+            <TextView
+                android:id="@+id/labelSocial"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:clickable="true"
+                android:focusable="true"
+                android:onClick="linkToSocial"
+                android:text="@string/social"
+                android:textAlignment="center"
+                tools:layout_conversion_absoluteHeight="20dp"
+                tools:layout_conversion_absoluteWidth="50dp"
+                tools:layout_editor_absoluteX="209dp"
+                tools:layout_editor_absoluteY="680dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/profileContainer"
+            android:layout_width="100dp"
+            android:layout_height="80dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageProfile"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:clickable="true"
+                android:contentDescription="@string/profile"
+                android:focusable="true"
+                android:onClick="linkToProfile"
+                tools:layout_conversion_absoluteHeight="50dp"
+                tools:layout_conversion_absoluteWidth="50dp"
+                tools:layout_editor_absoluteX="309dp"
+                tools:layout_editor_absoluteY="622dp"
+                tools:srcCompat="@drawable/black_profile" />
+
+            <TextView
+                android:id="@+id/labelProfile"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:clickable="true"
+                android:focusable="true"
+                android:focusableInTouchMode="false"
+                android:gravity="center"
+                android:onClick="linkToProfile"
+                android:text="@string/profile"
+                android:textAlignment="center"
+                tools:layout_conversion_absoluteHeight="20dp"
+                tools:layout_conversion_absoluteWidth="42dp"
+                tools:layout_editor_absoluteX="309dp"
+                tools:layout_editor_absoluteY="688dp" />
+        </LinearLayout>
+    </LinearLayout>
 
     <TextView
         android:id="@+id/labelTitle"
         android:layout_width="150dp"
-        android:layout_height="79dp"
+        android:layout_height="60dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
+        android:gravity="center"
         android:text="@string/social"
+        android:textAlignment="center"
+        android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.391"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.049" />
-
-    <ImageView
-        android:id="@+id/imageHome"
-        android:layout_width="54dp"
-        android:layout_height="47dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="28dp"
-        android:layout_marginBottom="8dp"
-        android:clickable="true"
-        android:contentDescription="@string/home"
-        android:focusable="true"
-        android:onClick="linkToHome"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.024"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.965"
-        tools:srcCompat="@drawable/black_home" />
-
-    <TextView
-        android:id="@+id/labelHome"
-        android:layout_width="41dp"
-        android:layout_height="24dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginBottom="8dp"
-        android:clickable="true"
-        android:focusable="true"
-        android:onClick="linkToHome"
-        android:text="@string/home"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.022"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <ImageView
-        android:id="@+id/imageActivities"
-        android:layout_width="54dp"
-        android:layout_height="47dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:clickable="true"
-        android:contentDescription="@string/activities"
-        android:focusable="true"
-        android:onClick="linkToActivities"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.269"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.965"
-        tools:srcCompat="@drawable/black_activities" />
-
-    <TextView
-        android:id="@+id/labelActivities"
-        android:layout_width="wrap_content"
-        android:layout_height="20dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:clickable="true"
-        android:focusable="true"
-        android:onClick="linkToActivities"
-        android:text="@string/activities"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.273"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.984" />
-
-    <ImageView
-        android:id="@+id/imageSocial"
-        android:layout_width="54dp"
-        android:layout_height="47dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:background="#FFFFFF"
-        android:clickable="true"
-        android:contentDescription="@string/social"
-        android:focusable="true"
-        android:onClick="linkToSocial"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.563"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.965"
-        tools:srcCompat="@drawable/green_social" />
-
-    <TextView
-        android:id="@+id/labelSocial"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginBottom="8dp"
-        android:clickable="true"
-        android:focusable="true"
-        android:onClick="linkToSocial"
-        android:text="@string/social"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.526"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.995" />
-
-    <ImageView
-        android:id="@+id/imageProfile"
-        android:layout_width="54dp"
-        android:layout_height="47dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:clickable="true"
-        android:contentDescription="@string/profile"
-        android:focusable="true"
-        android:onClick="linkToProfile"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.879"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.965"
-        tools:srcCompat="@drawable/black_profile" />
-
-    <TextView
-        android:id="@+id/labelProfile"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        android:clickable="true"
-        android:focusable="true"
-        android:onClick="linkToProfile"
-        android:text="@string/profile"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.831"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.995" />
+        app:layout_constraintVertical_bias="0.024" />
 
     <TextView
         android:id="@+id/labelLeaderBoard"
         android:layout_width="115dp"
-        android:layout_height="59dp"
+        android:layout_height="50dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:text="@string/leader_board"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintHorizontal_bias="0.092"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.228" />
-
-    <TextView
-        android:id="@+id/labelRank"
-        android:layout_width="103dp"
-        android:layout_height="49dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:text="Rank"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.378" />
-
-    <TextView
-        android:id="@+id/labelName"
-        android:layout_width="117dp"
-        android:layout_height="55dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:text="Name"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.464"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.386" />
-
-    <TextView
-        android:id="@+id/labelPoints"
-        android:layout_width="90dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="284dp"
-        android:text="Points"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.918"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.672" />
+        app:layout_constraintVertical_bias="0.153" />
 
     <ImageView
         android:id="@+id/imageFriends"
-        android:layout_width="86dp"
-        android:layout_height="83dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
@@ -248,24 +225,123 @@
         android:onClick="linkToFriends"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.974"
+        app:layout_constraintHorizontal_bias="0.976"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.031"
+        app:layout_constraintVertical_bias="0.027"
         tools:srcCompat="@tools:sample/avatars[1]" />
 
     <Spinner
         android:id="@+id/spinnerSort"
         android:layout_width="194dp"
-        android:layout_height="54dp"
+        android:layout_height="50dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.796"
+        app:layout_constraintHorizontal_bias="0.83"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.226" />
+        app:layout_constraintVertical_bias="0.153" />
+
+    <LinearLayout
+        android:id="@+id/leaderboardContainer"
+        android:layout_width="335dp"
+        android:layout_height="248dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.433"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.404">
+
+        <LinearLayout
+            android:id="@+id/rankContainer"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/labelRank"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Rank"
+                android:textAlignment="center"
+                tools:layout_conversion_absoluteHeight="20dp"
+                tools:layout_conversion_absoluteWidth="80dp"
+                tools:layout_editor_absoluteX="49dp"
+                tools:layout_editor_absoluteY="303dp" />
+
+            <ListView
+                android:id="@+id/listRequests"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:layout_conversion_absoluteHeight="198dp"
+                tools:layout_conversion_absoluteWidth="100dp"
+                tools:layout_editor_absoluteX="39dp"
+                tools:layout_editor_absoluteY="323dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/nameContainer"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/labelName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Name"
+                android:textAlignment="center"
+                tools:layout_conversion_absoluteHeight="20dp"
+                tools:layout_conversion_absoluteWidth="80dp"
+                tools:layout_editor_absoluteX="149dp"
+                tools:layout_editor_absoluteY="303dp" />
+
+            <ListView
+                android:id="@+id/listName"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:layout_conversion_absoluteHeight="190dp"
+                tools:layout_conversion_absoluteWidth="100dp"
+                tools:layout_editor_absoluteX="139dp"
+                tools:layout_editor_absoluteY="331dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/pointsContainer"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/labelPoints"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Points"
+                android:textAlignment="center"
+                tools:layout_conversion_absoluteHeight="20dp"
+                tools:layout_conversion_absoluteWidth="80dp"
+                tools:layout_editor_absoluteX="250dp"
+                tools:layout_editor_absoluteY="303dp" />
+
+            <ListView
+                android:id="@+id/listPoints"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
