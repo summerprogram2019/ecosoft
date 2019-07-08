@@ -8,11 +8,11 @@ import lombok.extern.java.Log;
 
 @Data @Log
 public class ActivityInstance {
-    @NonNull Activity activity;
+    @NonNull Activities.ACTIVITY_TYPE activity;
     @NonNull Date time;
-    @NonNull Integer points;
+    @NonNull Integer units;
 
     public Integer getScore() {
-        return activity.getGreenValue() * points;
+        return Activities.getActivity(activity).getGreenValue() * units;
     }
 }
