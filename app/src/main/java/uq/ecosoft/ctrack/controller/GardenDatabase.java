@@ -1,4 +1,4 @@
-package uq.ecosoft.ctrack.model.database;
+package uq.ecosoft.ctrack.controller;
 
 public class GardenDatabase {
     private DatabaseConnector connector;

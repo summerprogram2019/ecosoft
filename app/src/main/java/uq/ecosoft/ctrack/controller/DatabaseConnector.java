@@ -1,4 +1,4 @@
-package uq.ecosoft.ctrack.model.database;
+package uq.ecosoft.ctrack.controller;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
