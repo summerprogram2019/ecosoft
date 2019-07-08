@@ -6,35 +6,20 @@ import java.util.Set;
 import lombok.Data;
 import lombok.NonNull;
 import lombok.extern.java.Log;
+import uq.ecosoft.ctrack.model.activities.ActivityInstance;
 
 @Data @Log
 public class User {
-    @NonNull
-    Integer uid;
-
-    @NonNull
-    String password;
-
-    @NonNull
-    String realName;
-
-    @NonNull
-    Score score;
-
-    @NonNull
-    List<Goal> goals;
-
-    @NonNull
-    Garden garden;
-
-    @NonNull
-    Set<User> friends;
-
-    @NonNull
-    Set<User> friendRequests;
-
-    @NonNull
-    Settings settings;
+    @NonNull Integer id;
+    @NonNull String password;
+    @NonNull String realName;
+    @NonNull Score score;
+    @NonNull List<Goal> goals;
+    @NonNull Garden garden;
+    @NonNull Set<User> friends;
+    @NonNull Set<User> friendRequests;
+    @NonNull Settings settings;
+    @NonNull List<ActivityInstance> activities;
 
     /**
      * This method will send a friend request to another user. If the user has already
@@ -147,6 +132,6 @@ public class User {
      * @return returns '(uid) name' of the user
      */
     private String getDebugName() {
-        return "(" + this.getUid() + ") " + this.getRealName();
+        return "(" + this.getId() + ") " + this.getRealName();
     }
 }
