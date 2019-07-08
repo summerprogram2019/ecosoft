@@ -41,4 +41,19 @@
         <item>Environmental Impact</item>
         <item>Garden</item>
     </string-array>
+    <string name="log_out">Log out</string>
+    <string-array name="time_frame">
+        <item>Hour</item>
+        <item>Day</item>
+        <item>Week</item>
+        <item>Month</item>
+        <item>Year</item>
+    </string-array>
+    <string-array name="goal_types">
+        <item>Step Tracking</item>
+        <item>Other</item>
+    </string-array>
+    <string-array name="sort_by">
+        <item>Sort By</item>
+    </string-array>
 </resources>

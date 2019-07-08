@@ -42,4 +42,19 @@
         <item>环境影响</item>
         <item>花园</item>
     </string-array>
+    <string name="log_out">退出</string>
+    <string-array name="time_frame">
+        <item>时</item>
+        <item>天</item>
+        <item>星期</item>
+        <item>月</item>
+        <item>年</item>
+    </string-array>
+    <string-array name="goal_types">
+        <item>步跟踪</item>
+        <item>其他</item>
+    </string-array>
+    <string-array name="sort_by">
+        <item>拍行</item>
+    </string-array>
 </resources>

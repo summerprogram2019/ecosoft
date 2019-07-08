@@ -5,14 +5,15 @@
     android:id="@+id/background"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#804CAF50">
+    android:background="#F5F6F8">
 
     <LinearLayout
         android:id="@+id/navContainer"
-        android:layout_width="403dp"
-        android:layout_height="84dp"
+        android:layout_width="415dp"
+        android:layout_height="70dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
+        android:background="#90EE91"
         android:gravity="bottom|center"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -22,7 +23,7 @@
         <LinearLayout
             android:id="@+id/homeContainer"
             android:layout_width="96dp"
-            android:layout_height="80dp"
+            android:layout_height="70dp"
             android:orientation="vertical"
             android:textAlignment="center">
 
@@ -36,6 +37,7 @@
                 android:contentDescription="@string/home"
                 android:focusable="true"
                 android:onClick="linkToHome"
+                app:srcCompat="@drawable/black_home"
                 tools:layout_conversion_absoluteHeight="50dp"
                 tools:layout_conversion_absoluteWidth="50dp"
                 tools:layout_editor_absoluteX="13dp"
@@ -47,12 +49,14 @@
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:background="#00050000"
                 android:clickable="true"
                 android:focusable="true"
                 android:gravity="center"
                 android:onClick="linkToHome"
                 android:text="@string/home"
                 android:textAlignment="center"
+                android:textColor="#070000"
                 tools:layout_conversion_absoluteHeight="20dp"
                 tools:layout_conversion_absoluteWidth="50dp"
                 tools:layout_editor_absoluteX="13dp"
@@ -63,7 +67,7 @@
         <LinearLayout
             android:id="@+id/activitiesContainer"
             android:layout_width="100dp"
-            android:layout_height="80dp"
+            android:layout_height="70dp"
             android:orientation="vertical">
 
             <ImageView
@@ -76,6 +80,7 @@
                 android:contentDescription="@string/activities"
                 android:focusable="true"
                 android:onClick="linkToActivities"
+                app:srcCompat="@drawable/black_activities"
                 tools:layout_conversion_absoluteHeight="50dp"
                 tools:layout_conversion_absoluteWidth="50dp"
                 tools:layout_editor_absoluteX="109dp"
@@ -87,22 +92,24 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:background="#00050000"
                 android:clickable="true"
                 android:focusable="true"
                 android:onClick="linkToActivities"
+                android:text="@string/activities"
                 android:textAlignment="center"
+                android:textColor="#070000"
                 tools:layout_conversion_absoluteHeight="20dp"
                 tools:layout_conversion_absoluteWidth="59dp"
                 tools:layout_editor_absoluteX="109dp"
-                tools:layout_editor_absoluteY="688dp"
-                tools:text="@string/activities" />
+                tools:layout_editor_absoluteY="688dp" />
 
         </LinearLayout>
 
         <LinearLayout
             android:id="@+id/socialContainer"
             android:layout_width="100dp"
-            android:layout_height="80dp"
+            android:layout_height="70dp"
             android:orientation="vertical">
 
             <ImageView
@@ -110,11 +117,12 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_gravity="center"
-                android:background="#FFFFFF"
+                android:background="#00FFFFFF"
                 android:clickable="true"
                 android:contentDescription="@string/social"
                 android:focusable="true"
                 android:onClick="linkToSocial"
+                app:srcCompat="@drawable/green_social"
                 tools:layout_conversion_absoluteHeight="50dp"
                 tools:layout_conversion_absoluteWidth="50dp"
                 tools:layout_editor_absoluteX="209dp"
@@ -126,11 +134,13 @@
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:background="#00050000"
                 android:clickable="true"
                 android:focusable="true"
                 android:onClick="linkToSocial"
                 android:text="@string/social"
                 android:textAlignment="center"
+                android:textColor="#070000"
                 tools:layout_conversion_absoluteHeight="20dp"
                 tools:layout_conversion_absoluteWidth="50dp"
                 tools:layout_editor_absoluteX="209dp"
@@ -140,7 +150,7 @@
         <LinearLayout
             android:id="@+id/profileContainer"
             android:layout_width="100dp"
-            android:layout_height="80dp"
+            android:layout_height="70dp"
             android:orientation="vertical">
 
             <ImageView
@@ -152,6 +162,7 @@
                 android:contentDescription="@string/profile"
                 android:focusable="true"
                 android:onClick="linkToProfile"
+                app:srcCompat="@drawable/black_profile"
                 tools:layout_conversion_absoluteHeight="50dp"
                 tools:layout_conversion_absoluteWidth="50dp"
                 tools:layout_editor_absoluteX="309dp"
@@ -163,6 +174,7 @@
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:background="#00050000"
                 android:clickable="true"
                 android:focusable="true"
                 android:focusableInTouchMode="false"
@@ -170,6 +182,7 @@
                 android:onClick="linkToProfile"
                 android:text="@string/profile"
                 android:textAlignment="center"
+                android:textColor="#070000"
                 tools:layout_conversion_absoluteHeight="20dp"
                 tools:layout_conversion_absoluteWidth="42dp"
                 tools:layout_editor_absoluteX="309dp"
@@ -184,6 +197,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
+        android:background="#4CAF50"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
@@ -202,6 +216,7 @@
         android:layout_marginEnd="60dp"
         android:layout_marginBottom="8dp"
         android:text="Name"
+        android:textColor="#050000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.161"
@@ -217,7 +232,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:background="#9903A9F4"
+        android:background="#4CAF50"
         android:text="Accept"
         android:textAllCaps="false"
         android:textSize="18sp"
@@ -241,6 +256,7 @@
         android:focusable="true"
         android:onClick="linkToFriends"
         android:text="@string/add_friends"
+        android:textColor="#050000"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -257,11 +273,12 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:background="#FFFFFF"
+        android:background="#4CAF50"
         android:clickable="true"
         android:focusable="true"
         android:onClick="linkToManage"
         android:text="@string/manage_friends"
+        android:textColor="#050000"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -280,6 +297,7 @@
         android:gravity="center"
         android:text="@string/social"
         android:textAlignment="center"
+        android:textColor="#050000"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

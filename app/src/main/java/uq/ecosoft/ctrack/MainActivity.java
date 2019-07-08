@@ -15,8 +15,16 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
+    public void linkToLogin(View view) {
+        setContentView(R.layout.activity_main);
+    }
+
     public void linkToHome(View view) {
         setContentView(R.layout.home);
+    }
+
+    public void linkToTcs(View view) {
+        setContentView(R.layout.terms_conditions);
     }
 
     public void linkToSignUp(View view) {
