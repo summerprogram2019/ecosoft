@@ -10,7 +10,7 @@ import lombok.extern.java.Log;
 @Data @Log
 public class User {
     @NonNull
-    int uid;
+    Integer uid;
 
     @NonNull
     String password;
@@ -67,7 +67,7 @@ public class User {
      * @param propagate if both users have requests with each other, then it will also add
      *                  to their friends list
      */
-    public void acceptFriendRequest(@NonNull User newFriend, boolean propagate) {
+    public void acceptFriendRequest(@NonNull User newFriend, @NonNull Boolean propagate) {
         log.info("Accepting friend request from " + newFriend.getDebugName() + "for"
                 + getDebugName() + " with propagate = " + propagate);
         // Ensures for both users have the other as a friend or have a request
@@ -87,10 +87,10 @@ public class User {
     }
 
     /**
-     * This method overloads with {@link #acceptFriendRequest(User, boolean)}, but specifies
+     * This method overloads with {@link #acceptFriendRequest(User, Boolean)}, but specifies
      * the second parameter to be false.
      * @param newFriend the friend to add to this user only.
-     * @see User#acceptFriendRequest(User, boolean)
+     * @see User#acceptFriendRequest(User, Boolean)
      */
     public void acceptFriendRequest(@NonNull User newFriend) {
         acceptFriendRequest(newFriend, false);
@@ -102,7 +102,7 @@ public class User {
      * @param newEnemy user to check and remove from our friends list
      * @param propagate if true will also attempt to remove the current user from the other person
      */
-    public void removeFriend(@NonNull User newEnemy, boolean propagate) {
+    public void removeFriend(@NonNull User newEnemy, @NonNull Boolean propagate) {
         log.info("Removing friend " + newEnemy.getDebugName() + "from" + getDebugName() +
                 " with propagate = " + propagate);
         // it currently warns that the check is unnecessary, it is not TODO: remove this comment
@@ -119,10 +119,10 @@ public class User {
     }
 
     /**
-     * This method overloads with {@link #removeFriend(User, boolean)}, but specifies
+     * This method overloads with {@link #removeFriend(User, Boolean)}, but specifies
      * the second parameter to be false.
      * @param newEnemy the friend to remove from this user only.
-     * @see User#removeFriend(User, boolean)
+     * @see User#removeFriend(User, Boolean)
      */
     public void removeFriend(@NonNull User newEnemy) {
         removeFriend(newEnemy, false);
