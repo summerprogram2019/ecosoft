@@ -11,6 +11,8 @@ import lombok.extern.java.Log;
 @Data @Log
 public class Article {
     @NonNull
+    Integer id;
+    @NonNull
     String title;
     @NonNull
     String description;
@@ -29,6 +31,7 @@ public class Article {
         likes.add(bigFan);
 
         // TODO: Update DB
+        // ArticleDatabase.likeArticle(bigFan.getId(), this.getId());
     }
 
     /**
@@ -39,5 +42,6 @@ public class Article {
         likes.remove(hater);
 
         // TODO: Update DB
+        // ArticleDatabase.unlikeArticle(hater.getId(), this.getId());
     }
 }
