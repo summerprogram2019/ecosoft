@@ -33,7 +33,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:text="Terms and Conditions"
+        android:text="@string/terms_conditions"
         android:textAlignment="center"
         android:textAllCaps="false"
         android:textColor="#090000"

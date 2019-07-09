@@ -56,4 +56,10 @@
     <string-array name="sort_by">
         <item>拍行</item>
     </string-array>
+    <string name="accept">接受</string>
+    <string name="goal_type">目标类型</string>
+    <string name="progress">进展</string>
+    <string name="rank">拍行</string>
+    <string name="point">分</string>
+    <string name="name">名字</string>
 </resources>

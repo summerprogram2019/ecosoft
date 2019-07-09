@@ -252,7 +252,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:text="Total points calculated from all activities..."
+        android:text="@string/points"
         android:textColor="#0A0000"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"

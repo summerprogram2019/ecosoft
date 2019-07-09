@@ -286,7 +286,7 @@
                 android:id="@+id/labelRank"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Rank"
+                android:text="@string/rank"
                 android:textAlignment="center"
                 android:textColor="#090000" />
 
@@ -310,7 +310,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="Name"
+                android:text="@string/name"
                 android:textAlignment="center"
                 android:textColor="#050000"
                 tools:layout_conversion_absoluteHeight="20dp"
@@ -342,7 +342,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="Points"
+                android:text="@string/point"
                 android:textAlignment="center"
                 android:textColor="#050000"
                 tools:layout_conversion_absoluteHeight="20dp"

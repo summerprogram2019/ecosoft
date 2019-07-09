@@ -56,4 +56,10 @@
     <string-array name="sort_by">
         <item>Sort By</item>
     </string-array>
+    <string name="accept">Accept</string>
+    <string name="goal_type">Goal Type</string>
+    <string name="progress">Progress</string>
+    <string name="rank">Rank</string>
+    <string name="name">Name</string>
+    <string name="point">Points</string>
 </resources>

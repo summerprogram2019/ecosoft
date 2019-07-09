@@ -249,7 +249,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:text="Coming Soon"
+        android:text="@string/future_activities"
         android:textColor="#090000"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
