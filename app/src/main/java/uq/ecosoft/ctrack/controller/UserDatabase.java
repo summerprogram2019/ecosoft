@@ -37,15 +37,27 @@ public class UserDatabase {
      * @throws SQLException
      */
     public static int getUserIDFromUsername(String username) throws SQLException {
-        Connection con = DatabaseConnector.getConnection();
+        // This allows us to close the connection at the end
+        Connection con = null;
+        PreparedStatement q = null;
+        ResultSet rs = null;
 
-        PreparedStatement q = con.prepareStatement("SELECT uid FROM user WHERE username = ?");
-        q.setString(1, username);
-        ResultSet rs = q.executeQuery();
+        try {
+            // Run the query
+            con = DatabaseConnector.getConnection();
+            q = con.prepareStatement("SELECT uid FROM user WHERE username = ?");
+            q.setString(1, username);
+            rs = q.executeQuery();
 
-        // Read the userID from the result
-        rs.first();
-        return rs.getInt("uid");
+            // Read the userID from the result
+            rs.first();
+            return rs.getInt("uid");
+        } catch (SQLException e) {
+            throw e;
+        } finally {
+            // Quietly close the connection
+            DatabaseConnector.closeQuietly(rs, q, con);
+        }
     }
 
     /**
