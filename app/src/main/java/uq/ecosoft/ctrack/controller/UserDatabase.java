@@ -18,15 +18,28 @@ public class UserDatabase {
      * @throws SQLException
      */
     public static String getPasswordFromUsername(String username) throws SQLException {
-        Connection con = DatabaseConnector.getConnection();
+        // This allows us to close the connection at the end
+        Connection con = null;
+        PreparedStatement q = null;
+        ResultSet rs = null;
 
-        PreparedStatement q = con.prepareStatement("SELECT password FROM user WHERE username = ?");
-        q.setString(1, username);
-        ResultSet rs = q.executeQuery();
+        try {
+            // Run the query
+            con = DatabaseConnector.getConnection();
 
-        // Read the password from the result
-        rs.first();
-        return rs.getString("password");
+            q = con.prepareStatement("SELECT password FROM user WHERE username = ?");
+            q.setString(1, username);
+            rs = q.executeQuery();
+
+            // Read the password from the result
+            rs.first();
+            return rs.getString("password");
+        } catch (SQLException e) {
+            throw e;
+        } finally {
+            // Quietly close the connection
+            DatabaseConnector.closeQuietly(rs, q, con);
+        }
     }
 
     /**
@@ -67,15 +80,27 @@ public class UserDatabase {
      * @return User object
      */
     public static void getUserFromID(int id) throws SQLException {
-        Connection con = DatabaseConnector.getConnection();
+        // This allows us to close the connection at the end
+        Connection con = null;
+        PreparedStatement q = null;
+        ResultSet rs = null;
 
-        PreparedStatement q = con.prepareStatement("SELECT * FROM user WHERE uid = ?");
-        q.setInt(1, id);
-        ResultSet rs = q.executeQuery();
+        try {
+            con = DatabaseConnector.getConnection();
 
-        rs.first();
-        // TODO: Build the user object here
-        //return new User();
+            q = con.prepareStatement("SELECT * FROM user WHERE uid = ?");
+            q.setInt(1, id);
+            rs = q.executeQuery();
+
+            rs.first();
+            // TODO: Build the user object here
+            //return new User();
+        } catch (SQLException e) {
+            throw e;
+        } finally {
+            // Quietly close the connection
+            DatabaseConnector.closeQuietly(rs, q, con);
+        }
     }
 
     /**
@@ -117,12 +142,24 @@ public class UserDatabase {
      * @throws SQLException
      */
     public static boolean removeUser(int userID) throws SQLException {
-        Connection con = DatabaseConnector.getConnection();
+        // This allows us to close the connection at the end
+        Connection con = null;
+        PreparedStatement q = null;
+        ResultSet rs = null;
 
-        PreparedStatement q = con.prepareStatement("DELETE FROM user WHERE uid = ?");
-        q.setInt(1, userID);
-        int result = q.executeUpdate();
-        return (result == 1);
+        try {
+            con = DatabaseConnector.getConnection();
+
+            q = con.prepareStatement("DELETE FROM user WHERE uid = ?");
+            q.setInt(1, userID);
+            int result = q.executeUpdate();
+            return (result == 1);
+        } catch (SQLException e) {
+            throw e;
+        } finally {
+            // Quietly close the connection
+            DatabaseConnector.closeQuietly(rs, q, con);
+        }
     }
 
     public static boolean removeUser(User user) throws SQLException {
@@ -136,13 +173,25 @@ public class UserDatabase {
      * @throws SQLException
      */
     public static Boolean addNewUser(String username, String password) throws SQLException {
-        Connection con = DatabaseConnector.getConnection();
+        // This allows us to close the connection at the end
+        Connection con = null;
+        PreparedStatement q = null;
+        ResultSet rs = null;
 
-        PreparedStatement q = con.prepareStatement("INSERT INTO user (username, password) VALUES(?, ?)");
-        q.setString(1, username);
-        q.setString(2, password);
-        int rows = q.executeUpdate();
-        return (rows == 1);
+        try {
+            con = DatabaseConnector.getConnection();
+
+            q = con.prepareStatement("INSERT INTO user (username, password) VALUES(?, ?)");
+            q.setString(1, username);
+            q.setString(2, password);
+            int rows = q.executeUpdate();
+            return (rows == 1);
+        } catch (SQLException e) {
+            throw e;
+        } finally {
+            // Quietly close the connection
+            DatabaseConnector.closeQuietly(rs, q, con);
+        }
     }
 
     /**
@@ -171,11 +220,23 @@ public class UserDatabase {
      * @throws SQLException
      */
     public static void addFriend(int userID, int friendID) throws SQLException {
-        Connection con = DatabaseConnector.getConnection();
+        // This allows us to close the connection at the end
+        Connection con = null;
+        PreparedStatement q = null;
+        ResultSet rs = null;
 
-        PreparedStatement q = con.prepareStatement("INSERT INTO friends (user1, user2) VALUES(?, ?");
-        q.setInt(1, userID);
-        q.setInt(2, friendID);
+        try {
+            con = DatabaseConnector.getConnection();
+
+            q = con.prepareStatement("INSERT INTO friends (user1, user2) VALUES(?, ?");
+            q.setInt(1, userID);
+            q.setInt(2, friendID);
+        } catch (SQLException e) {
+            throw e;
+        } finally {
+            // Quietly close the connection
+            DatabaseConnector.closeQuietly(rs, q, con);
+        }
     }
 
     /**
@@ -185,10 +246,22 @@ public class UserDatabase {
      * @throws SQLException
      */
     public static void removeFriend(int userID, int friendID) throws SQLException {
-        Connection con = DatabaseConnector.getConnection();
+        // This allows us to close the connection at the end
+        Connection con = null;
+        PreparedStatement q = null;
+        ResultSet rs = null;
 
-        PreparedStatement q = con.prepareStatement("DELETE FROM friends WHERE user1 = ? AND user2 = ?");
-        q.setInt(1, userID);
-        q.setInt(2, friendID);
+        try {
+            con = DatabaseConnector.getConnection();
+
+            q = con.prepareStatement("DELETE FROM friends WHERE user1 = ? AND user2 = ?");
+            q.setInt(1, userID);
+            q.setInt(2, friendID);
+        } catch (SQLException e) {
+            throw e;
+        } finally {
+            // Quietly close the connection
+            DatabaseConnector.closeQuietly(rs, q, con);
+        }
     }
 }
