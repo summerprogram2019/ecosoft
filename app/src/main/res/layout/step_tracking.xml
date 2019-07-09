@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F6F8">
+
+    <LinearLayout
+        android:id="@+id/navContainer"
+        android:layout_width="415dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="#90EE91"
+        android:gravity="bottom|center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:id="@+id/homeContainer"
+            android:layout_width="96dp"
+            android:layout_height="70dp"
+            android:orientation="vertical"
+            android:textAlignment="center">
+
+            <ImageView
+                android:id="@+id/imageHome"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:background="#00FFFFFF"
+                android:clickable="true"
+                android:contentDescription="@string/home"
+                android:focusable="true"
+                android:onClick="linkToHome"
+                app:srcCompat="@drawable/black_home"
+                tools:layout_conversion_absoluteHeight="50dp"
+                tools:layout_conversion_absoluteWidth="50dp"
+                tools:layout_editor_absoluteX="13dp"
+                tools:layout_editor_absoluteY="622dp"
+                tools:srcCompat="@drawable/black_home" />
+
+            <TextView
+                android:id="@+id/labelHome"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:onClick="linkToHome"
+                android:text="@string/home"
+                android:textAlignment="center"
+                android:textColor="#090000"
+                tools:layout_conversion_absoluteHeight="20dp"
+                tools:layout_conversion_absoluteWidth="50dp"
+                tools:layout_editor_absoluteX="13dp"
+                tools:layout_editor_absoluteY="680dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/activitiesContainer"
+            android:layout_width="100dp"
+            android:layout_height="70dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageActivities"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:background="#0FFFFFFF"
+                android:clickable="true"
+                android:contentDescription="@string/activities"
+                android:focusable="true"
+                android:onClick="linkToActivities"
+                app:srcCompat="@drawable/green_activities"
+                tools:layout_conversion_absoluteHeight="50dp"
+                tools:layout_conversion_absoluteWidth="50dp"
+                tools:layout_editor_absoluteX="109dp"
+                tools:layout_editor_absoluteY="622dp"
+                tools:srcCompat="@drawable/green_activities" />
+
+            <TextView
+                android:id="@+id/labelActivities"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:clickable="true"
+                android:focusable="true"
+                android:onClick="linkToActivities"
+                android:text="@string/activities"
+                android:textAlignment="center"
+                android:textColor="#090000"
+                tools:layout_conversion_absoluteHeight="20dp"
+                tools:layout_conversion_absoluteWidth="59dp"
+                tools:layout_editor_absoluteX="109dp"
+                tools:layout_editor_absoluteY="688dp"
+                tools:text="@string/activities" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/socialContainer"
+            android:layout_width="100dp"
+            android:layout_height="70dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageSocial"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:clickable="true"
+                android:contentDescription="@string/social"
+                android:focusable="true"
+                android:onClick="linkToSocial"
+                app:srcCompat="@drawable/black_social"
+                tools:layout_conversion_absoluteHeight="50dp"
+                tools:layout_conversion_absoluteWidth="50dp"
+                tools:layout_editor_absoluteX="209dp"
+                tools:layout_editor_absoluteY="622dp"
+                tools:srcCompat="@drawable/black_social" />
+
+            <TextView
+                android:id="@+id/labelSocial"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:clickable="true"
+                android:focusable="true"
+                android:onClick="linkToSocial"
+                android:text="@string/social"
+                android:textAlignment="center"
+                android:textColor="#090000"
+                tools:layout_conversion_absoluteHeight="20dp"
+                tools:layout_conversion_absoluteWidth="50dp"
+                tools:layout_editor_absoluteX="209dp"
+                tools:layout_editor_absoluteY="680dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/profileContainer"
+            android:layout_width="100dp"
+            android:layout_height="70dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageProfile"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:clickable="true"
+                android:contentDescription="@string/profile"
+                android:focusable="true"
+                android:onClick="linkToProfile"
+                app:srcCompat="@drawable/black_profile"
+                tools:layout_conversion_absoluteHeight="50dp"
+                tools:layout_conversion_absoluteWidth="50dp"
+                tools:layout_editor_absoluteX="309dp"
+                tools:layout_editor_absoluteY="622dp"
+                tools:srcCompat="@drawable/black_profile" />
+
+            <TextView
+                android:id="@+id/labelProfile"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:clickable="true"
+                android:focusable="true"
+                android:focusableInTouchMode="false"
+                android:gravity="center"
+                android:onClick="linkToProfile"
+                android:text="@string/profile"
+                android:textAlignment="center"
+                android:textColor="#090000"
+                tools:layout_conversion_absoluteHeight="20dp"
+                tools:layout_conversion_absoluteWidth="42dp"
+                tools:layout_editor_absoluteX="309dp"
+                tools:layout_editor_absoluteY="688dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <Spinner
+        android:id="@+id/spinnerDropDown"
+        android:layout_width="270dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="#4CAF50"
+        android:entries="@array/activities"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.189" />
+
+    <TextView
+        android:id="@+id/labelTitle"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:gravity="center"
+        android:text="@string/activities"
+        android:textAlignment="center"
+        android:textColor="#0A0000"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.024" />
+
+    <ImageButton
+        android:id="@+id/imageBack"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="#00FFFFFF"
+        android:contentDescription="@string/back"
+        android:onClick="linkToActivities"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.027"
+        app:srcCompat="@android:drawable/ic_menu_revert" />
+
+    <TextView
+        android:id="@+id/labelSteps"
+        android:layout_width="117dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/step_tracking"
+        android:textColor="#070000"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.179"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.404" />
+
+    <TextView
+        android:id="@+id/labelImpact"
+        android:layout_width="294dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/points"
+        android:textColor="#070000"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.485"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.567" />
+
+    <Spinner
+        android:id="@+id/spinnerTime"
+        android:layout_width="145dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="#4CAF50"
+        android:entries="@array/time_frame"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.792"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.396" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
