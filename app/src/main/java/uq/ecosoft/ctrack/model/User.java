@@ -15,6 +15,7 @@ import uq.ecosoft.ctrack.model.activities.ActivityInstance;
 @Data @Log
 public class User {
     @NonNull Integer id;
+    @NonNull String username;
     @NonNull String password;
     @NonNull String realName;
 
@@ -48,12 +49,14 @@ public class User {
             acceptFriendRequest(newFriend);
 
             // TODO: DB
+            // UserDatabase.addFriend(this.getId(), newFriend.getId())
         } else {
             log.info("Other user has not sent us a friend request, sending them one");
             // Add ourselves to the other persons friend requests
             newFriend.getFriendRequests().add(this);
 
             // TODO: Update the db
+            // UserDatabase.addFriend(this.getId(), newFriend.getId())
         }
     }
 
@@ -79,6 +82,7 @@ public class User {
                 newFriend.acceptFriendRequest(this, false);
             }
             // TODO: Update the db
+            // UserDatabase.addFriend(this.getId(), newFriend.getId())
         } else {
             log.warning("Attempted to add a friend not in the friend request list " +
                     newFriend.getDebugName());
@@ -111,6 +115,7 @@ public class User {
             getFriends().remove(newEnemy);
 
             // TODO: Update DB
+            // UserDatabase.removeFriend(this.getId(), newEnemy.getId())
         } else {
             log.warning("Attempted to remove friend but they are not currently a friend!");
         }
@@ -141,6 +146,7 @@ public class User {
             newEnemy.getFriendRequests().remove(this);
 
             // TODO: Remove from db
+            // UserDatabase.removeFriend(this.getId(), newEnemy.getId())
         }
 
     }

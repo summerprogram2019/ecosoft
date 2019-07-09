@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
+import uq.ecosoft.ctrack.model.User;
 
 public class UserDatabase {
     private DatabaseConnector connector;
@@ -59,6 +60,24 @@ public class UserDatabase {
     }
 
     /**
+     * Returns a user object given an ID
+     * This function is not complete - need User constructor first?
+     * @param id the userID to fetch a User object for
+     * @return User object
+     */
+    public void getUserFromID(int id) throws SQLException {
+        Connection con = connector.getConnection();
+
+        PreparedStatement q = con.prepareStatement("SELECT * FROM user WHERE uid = ?");
+        q.setInt(1, id);
+        ResultSet rs = q.executeQuery();
+
+        rs.first();
+        // TODO: Build the user object here
+        //return new User();
+    }
+
+    /**
      * Generates a user token for a given username
      * This uses the username + a super secret server seed to verify identities
      * Very useful for authentication purposes
@@ -105,6 +124,9 @@ public class UserDatabase {
         return (result == 1);
     }
 
+    public boolean removeUser(User user) throws SQLException {
+        return this.removeUser(user.getId());
+    }
     /**
      * Register an account into the database
      * @param username the username for the new account
@@ -122,14 +144,49 @@ public class UserDatabase {
         return (rows == 1);
     }
 
+    /**
+     * Register an account into the database
+     * @param user the user object to create in the database
+     * @return whether or not the user was successfully registered
+     * @throws SQLException
+     */
+    public Boolean addNewUser(User user) throws SQLException {
+        return this.addNewUser(user.getUsername(), user.getPassword());
+    }
+
+    /**
+     *
+     * @param userID
+     * @throws SQLException
+     */
     public void getFriends(int userID) throws SQLException {
 
     }
 
+    /**
+     * Add a friend or send a friend request to the database
+     * @param userID Original user
+     * @param friendID Friend to remove
+     * @throws SQLException
+     */
     public void addFriend(int userID, int friendID) throws SQLException {
         Connection con = connector.getConnection();
 
         PreparedStatement q = con.prepareStatement("INSERT INTO friends (user1, user2) VALUES(?, ?");
+        q.setInt(1, userID);
+        q.setInt(2, friendID);
+    }
+
+    /**
+     * Remove a friend or friend request from the database
+     * @param userID Original user
+     * @param friendID Friend to remove
+     * @throws SQLException
+     */
+    public void removeFriend(int userID, int friendID) throws SQLException {
+        Connection con = connector.getConnection();
+
+        PreparedStatement q = con.prepareStatement("DELETE FROM friends WHERE user1 = ? AND user2 = ?");
         q.setInt(1, userID);
         q.setInt(2, friendID);
     }
