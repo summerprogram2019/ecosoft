@@ -71,3 +71,10 @@ fastlane/Preview.html
 fastlane/screenshots
 fastlane/test_output
 fastlane/readme.md
+
+# Additional things to ignore
+.project
+.settings/*
+app/.settings/*
+.classpath
+.vscode/*
