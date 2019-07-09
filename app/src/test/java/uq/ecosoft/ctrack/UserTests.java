@@ -1,6 +1,5 @@
 package uq.ecosoft.ctrack;
 
-import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -12,8 +11,6 @@ import uq.ecosoft.ctrack.model.Goal;
 import uq.ecosoft.ctrack.model.Score;
 import uq.ecosoft.ctrack.model.Settings;
 import uq.ecosoft.ctrack.model.User;
-import uq.ecosoft.ctrack.model.activities.Activities;
-import uq.ecosoft.ctrack.model.activities.Activity;
 import uq.ecosoft.ctrack.model.activities.ActivityInstance;
 
 import static org.junit.Assert.assertEquals;
@@ -63,9 +60,9 @@ public class UserTests {
     }
 
     private User helpNewUser(Integer id, String name) {
-        return new User(id, "foo", name, new Score(),
-                new ArrayList<Goal>(), new Garden(), new HashSet<User>(), new HashSet<User>(), new Settings(),
-                new ArrayList<ActivityInstance>());
+        return new User(id, "foo", name, new Score(), new Garden(), new Settings(),
+                new ArrayList<Goal>(), new ArrayList<ActivityInstance>(), new HashSet<User>(),
+                new HashSet<User>());
     }
 
     private void friendArrayCheck(User a, Integer aRequests, Integer aFriends,
