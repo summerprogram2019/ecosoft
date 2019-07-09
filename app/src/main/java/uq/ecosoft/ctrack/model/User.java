@@ -12,8 +12,7 @@ import lombok.extern.java.Log;
 import uq.ecosoft.ctrack.model.activities.Activities;
 import uq.ecosoft.ctrack.model.activities.ActivityInstance;
 
-@Data
-@Log
+@Data @Log
 public class User {
     @NonNull Integer id;
     @NonNull String password;
