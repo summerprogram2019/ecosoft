@@ -2,29 +2,29 @@ package uq.ecosoft.ctrack.model;
 
 import java.util.List;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NonNull;
+import lombok.ToString;
 import lombok.extern.java.Log;
-import uq.ecosoft.ctrack.model.activities.Activities;
-import uq.ecosoft.ctrack.model.activities.Activity;
 import uq.ecosoft.ctrack.model.activities.ActivityInstance;
+import uq.ecosoft.ctrack.model.activities.ActivityType;
 
-@Data
-@Log
+@Data @Log
 public class User {
     @NonNull Integer id;
     @NonNull String username;
     @NonNull String password;
     @NonNull String realName;
-    @NonNull Score score;
-    @NonNull List<Goal> goals;
     @NonNull Garden garden;
-    @NonNull Set<User> friends;
-    @NonNull Set<User> friendRequests;
     @NonNull Settings settings;
-    @NonNull List<ActivityInstance> activities;
+
+    @NonNull @ToString.Exclude @EqualsAndHashCode.Exclude List<Goal> goals;
+    @NonNull @ToString.Exclude @EqualsAndHashCode.Exclude List<ActivityInstance> activities;
+    @NonNull @ToString.Exclude @EqualsAndHashCode.Exclude Set<User> friendRequests;
+    @NonNull @ToString.Exclude @EqualsAndHashCode.Exclude Set<User> friends;
+
 
     /**
      * This method will send a friend request to another user. If the user has already
@@ -87,7 +87,7 @@ public class User {
     }
 
     /**
-     * This method overloads with {@link #acceptFriendRequest(User, Boolean)}, but specifies
+     * This method overloads with {@link #acceptFriendRequest(User)}, but specifies
      * the second parameter to be true.
      *
      * @param newFriend the friend to add and propagate too.
@@ -105,7 +105,7 @@ public class User {
      * @param propagate if true will also attempt to remove the current user from the other person
      */
     public void removeFriend(@NonNull User newEnemy, @NonNull Boolean propagate) {
-        log.info("Removing friend " + newEnemy.getDebugName() + "from" + getDebugName() +
+        log.info("Removing friend " + newEnemy.getDebugName() + " from " + getDebugName() +
                 " with propagate = " + propagate);
         // it currently warns that the check is unnecessary, it is not TODO: remove this comment
         if (getFriends().contains(newEnemy)) {
@@ -150,11 +150,12 @@ public class User {
 
     /**
      * Calculates and adds the scores of each activity instance
+     *
      * @return the total of all the scores
      */
     public Integer calculateTotalScore() {
         Integer result = 0;
-        for (ActivityInstance a: activities) {
+        for (ActivityInstance a : activities) {
             result += a.getScore();
         }
         return result;
@@ -162,13 +163,14 @@ public class User {
 
     /**
      * Calculates and adds the scores of each activity instance of the specified type
+     *
      * @param actType the type of activity to total
      * @return the total of all the scores matching {@param actType}
      */
-    public Integer calculateActivityScore(Activities.ACTIVITY_TYPE actType) {
+    public Integer calculateActivityScore(ActivityType actType) {
         Integer result = 0;
-        for (ActivityInstance a: activities) {
-            if (a.getActivity().equals(actType)) {
+        for (ActivityInstance a : activities) {
+            if (a.getActivityType().equals(actType)) {
                 result += a.getScore();
             }
         }
@@ -180,7 +182,8 @@ public class User {
      *
      * @return returns '(uid) name' of the user
      */
-    private String getDebugName() {
+    public String getDebugName() {
         return "(" + this.getId() + ") " + this.getRealName();
     }
+
 }
