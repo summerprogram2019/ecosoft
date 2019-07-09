@@ -145,7 +145,6 @@ public class UserDatabase {
         // This allows us to close the connection at the end
         Connection con = null;
         PreparedStatement q = null;
-        ResultSet rs = null;
 
         try {
             con = DatabaseConnector.getConnection();
@@ -158,7 +157,7 @@ public class UserDatabase {
             throw e;
         } finally {
             // Quietly close the connection
-            DatabaseConnector.closeQuietly(rs, q, con);
+            DatabaseConnector.closeQuietly(q, con);
         }
     }
 
@@ -176,7 +175,6 @@ public class UserDatabase {
         // This allows us to close the connection at the end
         Connection con = null;
         PreparedStatement q = null;
-        ResultSet rs = null;
 
         try {
             con = DatabaseConnector.getConnection();
@@ -190,7 +188,7 @@ public class UserDatabase {
             throw e;
         } finally {
             // Quietly close the connection
-            DatabaseConnector.closeQuietly(rs, q, con);
+            DatabaseConnector.closeQuietly(q, con);
         }
     }
 
@@ -223,7 +221,6 @@ public class UserDatabase {
         // This allows us to close the connection at the end
         Connection con = null;
         PreparedStatement q = null;
-        ResultSet rs = null;
 
         try {
             con = DatabaseConnector.getConnection();
@@ -235,7 +232,7 @@ public class UserDatabase {
             throw e;
         } finally {
             // Quietly close the connection
-            DatabaseConnector.closeQuietly(rs, q, con);
+            DatabaseConnector.closeQuietly(q, con);
         }
     }
 
@@ -249,7 +246,6 @@ public class UserDatabase {
         // This allows us to close the connection at the end
         Connection con = null;
         PreparedStatement q = null;
-        ResultSet rs = null;
 
         try {
             con = DatabaseConnector.getConnection();
@@ -261,7 +257,7 @@ public class UserDatabase {
             throw e;
         } finally {
             // Quietly close the connection
-            DatabaseConnector.closeQuietly(rs, q, con);
+            DatabaseConnector.closeQuietly(q, con);
         }
     }
 }
