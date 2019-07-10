@@ -10,8 +10,8 @@ public enum ActivityType {
      * These are the preset enums
      */
     WALKING(0, "Walking",
-            "If you take steps you are walking","steps",10)
-    , DRIVING(1, "Driving", "If it goes vroom you drive",
+            "If you take steps you are walking","steps",10),
+    DRIVING(1, "Driving", "If it goes vroom you drive",
             "minutes", -100);
 
     @Getter
@@ -24,7 +24,6 @@ public enum ActivityType {
     String unitName;
     @Getter
     Integer greenValue;
-
 
     public Boolean isGreen() {
         return (greenValue > 0);
