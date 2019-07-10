@@ -3,6 +3,7 @@ package uq.ecosoft.ctrack;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Random;
 
 import uq.ecosoft.ctrack.model.Article;
@@ -10,6 +11,7 @@ import uq.ecosoft.ctrack.model.Goal;
 import uq.ecosoft.ctrack.model.Settings;
 import uq.ecosoft.ctrack.model.User;
 import uq.ecosoft.ctrack.model.activities.ActivityInstance;
+import uq.ecosoft.ctrack.model.garden.PlantInstance;
 
 public abstract class TestUtil {
     private static Random r = new Random();
@@ -22,7 +24,7 @@ public abstract class TestUtil {
      */
     public static User createNewUser(Integer id, String username) {
         return new User(id, username, "hunter2", username,
-                new Garden(), new Settings(), new ArrayList<Goal>()
+                new ArrayList<PlantInstance>(), new Settings(), new ArrayList<Goal>()
                 , new ArrayList<ActivityInstance>(), new HashSet<User>(), new HashSet<User>());
     }
 
