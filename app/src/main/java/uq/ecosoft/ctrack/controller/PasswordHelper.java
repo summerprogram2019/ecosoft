@@ -1,8 +1,10 @@
 package uq.ecosoft.ctrack.controller;
 
 import java.io.UnsupportedEncodingException;
+import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.Base64;
 
 public class PasswordHelper {
     private static final String secretSeed = "harryguthrie007";
@@ -19,8 +21,16 @@ public class PasswordHelper {
             digest.reset();
             digest.update(input.getBytes("UTF-8"));
 
-            byte[] hashedBytes = digest.digest(input.getBytes());
-            return new String(hashedBytes, "UTF-8");
+            // Convert the hashed bytes into a hex string
+            byte[] hashedBytes = digest.digest(input.getBytes(StandardCharsets.UTF_8));
+            StringBuffer hexString = new StringBuffer();
+            for (int i = 0; i < hashedBytes.length; i++) {
+                String hex = Integer.toHexString(0xff & hashedBytes[i]);
+                if(hex.length() == 1) hexString.append('0');
+                hexString.append(hex);
+            }
+
+            return hexString.toString();
         } catch (NoSuchAlgorithmException e) {
             return null;
         } catch (UnsupportedEncodingException e) {
