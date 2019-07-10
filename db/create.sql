@@ -12,7 +12,6 @@ CREATE TABLE IF NOT EXISTS `user` (
 CREATE TABLE IF NOT EXISTS `activities` (
   `id` int(12) NOT NULL AUTO_INCREMENT,
   `name` varchar(64) NOT NULL,
-  `points` smallint(6) NOT NULL,
   PRIMARY KEY (`id`)
 ) COMMENT='Keeps track of the various activities that a user can perform to earn points';
 
