@@ -2,15 +2,14 @@ package uq.ecosoft.ctrack.model;
 
 import java.util.List;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NonNull;
 import lombok.ToString;
 import lombok.extern.java.Log;
-import uq.ecosoft.ctrack.model.activities.Activities;
 import uq.ecosoft.ctrack.model.activities.ActivityInstance;
+import uq.ecosoft.ctrack.model.activities.ActivityType;
 
 @Data @Log
 public class User {
@@ -18,8 +17,6 @@ public class User {
     @NonNull String username;
     @NonNull String password;
     @NonNull String realName;
-
-    @NonNull Score score;
     @NonNull Garden garden;
     @NonNull Settings settings;
 
@@ -90,7 +87,7 @@ public class User {
     }
 
     /**
-     * This method overloads with {@link #acceptFriendRequest(User, Boolean)}, but specifies
+     * This method overloads with {@link #acceptFriendRequest(User)}, but specifies
      * the second parameter to be true.
      *
      * @param newFriend the friend to add and propagate too.
@@ -170,10 +167,10 @@ public class User {
      * @param actType the type of activity to total
      * @return the total of all the scores matching {@param actType}
      */
-    public Integer calculateActivityScore(Activities.ACTIVITY_TYPE actType) {
+    public Integer calculateActivityScore(ActivityType actType) {
         Integer result = 0;
         for (ActivityInstance a : activities) {
-            if (a.getActivity().equals(actType)) {
+            if (a.getActivityType().equals(actType)) {
                 result += a.getScore();
             }
         }
@@ -185,7 +182,7 @@ public class User {
      *
      * @return returns '(uid) name' of the user
      */
-    private String getDebugName() {
+    public String getDebugName() {
         return "(" + this.getId() + ") " + this.getRealName();
     }
 

@@ -1,11 +1,15 @@
 package uq.ecosoft.ctrack.model;
 
 
+import android.annotation.SuppressLint;
+
 import java.util.Date;
 import java.util.Set;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NonNull;
+import lombok.ToString;
 import lombok.extern.java.Log;
 
 @Data @Log
@@ -20,7 +24,7 @@ public class Article {
     String url;
     @NonNull
     Date time;
-    @NonNull
+    @NonNull @ToString.Exclude @EqualsAndHashCode.Exclude
     Set<User> likes;
 
     /**
@@ -28,6 +32,9 @@ public class Article {
      * @param bigFan the user to add into the like Set.
      */
     public void addUserLike(User bigFan) {
+        log.info(String.format("Adding a like from User(%s) to %s"
+                , bigFan.getDebugName(), this.getDebugName()));
+
         likes.add(bigFan);
 
         // TODO: Update DB
@@ -39,9 +46,17 @@ public class Article {
      * @param hater the user to remove from the like Set.
      */
     public void removeUserLike(User hater) {
+        log.info(String.format("Removing a like by User(%s) for %s"
+                , hater.getDebugName(), this.getDebugName()));
+
         likes.remove(hater);
 
         // TODO: Update DB
         // ArticleDatabase.unlikeArticle(hater.getId(), this.getId());
+    }
+
+    @SuppressLint("DefaultLocale")
+    private String getDebugName() {
+        return String.format("Article(%d, %s)", id, title);
     }
 }
