@@ -1,5 +1,6 @@
 package uq.ecosoft.ctrack.model;
 
+import java.sql.SQLException;
 import java.util.List;
 import java.util.Set;
 
@@ -8,6 +9,7 @@ import lombok.EqualsAndHashCode;
 import lombok.NonNull;
 import lombok.ToString;
 import lombok.extern.java.Log;
+import uq.ecosoft.ctrack.controller.UserDatabase;
 import uq.ecosoft.ctrack.model.activities.ActivityInstance;
 import uq.ecosoft.ctrack.model.activities.Activity;
 import uq.ecosoft.ctrack.model.garden.PlantInstance;
@@ -46,15 +48,25 @@ public class User {
             // and accept the friend request
             acceptFriendRequest(newFriend);
 
-            // TODO: DB
-            // UserDatabase.addFriend(this.getId(), newFriend.getId())
+            // Sync to database
+            try {
+                UserDatabase.addFriend(this.getId(), newFriend.getId());
+            } catch (SQLException e) {
+                log.warning("Database issue when sending friend request");
+                // TODO: Something else with the error?
+            }
         } else {
             log.info("Other user has not sent us a friend request, sending them one");
             // Add ourselves to the other persons friend requests
             newFriend.getFriendRequests().add(this);
 
-            // TODO: Update the db
-            // UserDatabase.addFriend(this.getId(), newFriend.getId())
+            // Sync to database
+            try {
+                UserDatabase.addFriend(this.getId(), newFriend.getId());
+            } catch (SQLException e) {
+                log.warning("Database issue when sending friend request");
+                // TODO: Something else with the error?
+            }
         }
     }
 
@@ -79,8 +91,14 @@ public class User {
             if (propagate) {
                 newFriend.acceptFriendRequest(this, false);
             }
-            // TODO: Update the db
-            // UserDatabase.addFriend(this.getId(), newFriend.getId())
+
+            // Sync to database
+            try {
+                UserDatabase.addFriend(this.getId(), newFriend.getId());
+            } catch (SQLException e) {
+                log.warning("Database issue when sending friend request");
+                // TODO: Something else with the error?
+            }
         } else {
             log.warning("Attempted to add a friend not in the friend request list " +
                     newFriend.getDebugName());
@@ -112,8 +130,13 @@ public class User {
         if (getFriends().contains(newEnemy)) {
             getFriends().remove(newEnemy);
 
-            // TODO: Update DB
-            // UserDatabase.removeFriend(this.getId(), newEnemy.getId())
+            // Sync to database
+            try {
+                UserDatabase.removeFriend(this.getId(), newEnemy.getId());
+            } catch (SQLException e) {
+                log.warning("Database issue when sending friend request");
+                // TODO: Something else with the error?
+            }
         } else {
             log.warning("Attempted to remove friend but they are not currently a friend!");
         }
@@ -143,8 +166,13 @@ public class User {
         if (newEnemy.getFriendRequests().contains(this)) {
             newEnemy.getFriendRequests().remove(this);
 
-            // TODO: Remove from db
-            // UserDatabase.removeFriend(this.getId(), newEnemy.getId())
+            // Sync to database
+            try {
+                UserDatabase.removeFriend(this.getId(), newEnemy.getId());
+            } catch (SQLException e) {
+                log.warning("Database issue when sending friend request");
+                // TODO: Something else with the error?
+            }
         }
 
     }
