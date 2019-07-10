@@ -54,6 +54,8 @@ public class DatabaseConnector {
             con.close();
         } catch (SQLException e) {
             // ignore
+        } catch (NullPointerException e) {
+            // ignore
         }
     }
 
