@@ -4,9 +4,16 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+
+import uq.ecosoft.ctrack.model.Garden;
+import uq.ecosoft.ctrack.model.Goal;
+import uq.ecosoft.ctrack.model.Settings;
 import uq.ecosoft.ctrack.model.User;
+import uq.ecosoft.ctrack.model.activities.ActivityInstance;
 
 public class UserDatabase {
     private static String secretSeed = "antelope";
@@ -79,7 +86,7 @@ public class UserDatabase {
      * @param id the userID to fetch a User object for
      * @return User object
      */
-    public static void getUserFromID(int id) throws SQLException {
+    public static User getUserFromID(int id) throws SQLException {
         // This allows us to close the connection at the end
         Connection con = null;
         PreparedStatement q = null;
@@ -92,9 +99,33 @@ public class UserDatabase {
             q.setInt(1, id);
             rs = q.executeQuery();
 
+            /*
+            // Query to generate the set of friends for the user
+            PreparedStatement q2 = con.prepareStatement("SELECT * FROM friends WHERE user1 = ?");
+            q2.setInt(1, id);
+            ResultSet rs2 = q.executeQuery();
+            HashSet<User> friends = new HashSet<>();
+            while(rs2.next()) {
+                friends.add(rs2.getInt("friend2"));
+            }
+
+            // Query to find any unaccepted friend requests
+            PreparedStatement q3 = con.prepareStatement("SELECT * FROM friends WHERE user2 = ? AND user1 NOT IN (SELECT * FROM friends WHERE user1 = ?");
+            q3.setInt(1, id);
+            q3.setInt(2, id);
+            ResultSet rs3 = q.executeQuery();
+            HashSet<User> friendRequests = new HashSet<>();
+            while(rs3.next()) {
+
+            }
+            */
+
             rs.first();
-            // TODO: Build the user object here
-            //return new User();
+            String username = rs.getString("username");
+            String password = rs.getString("password");
+            return new User(id, username, password, username, new Garden(), new Settings(),
+                    new ArrayList<Goal>() ,new ArrayList<ActivityInstance>(),
+                    new HashSet<User>(), new HashSet<User>());
         } catch (SQLException e) {
             throw e;
         } finally {
@@ -164,6 +195,7 @@ public class UserDatabase {
     public static boolean removeUser(User user) throws SQLException {
         return removeUser(user.getId());
     }
+
     /**
      * Register an account into the database
      * @param username the username for the new account
