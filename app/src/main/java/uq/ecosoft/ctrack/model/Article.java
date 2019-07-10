@@ -3,6 +3,7 @@ package uq.ecosoft.ctrack.model;
 
 import android.annotation.SuppressLint;
 
+import java.sql.SQLException;
 import java.util.Date;
 import java.util.Set;
 
@@ -11,6 +12,8 @@ import lombok.EqualsAndHashCode;
 import lombok.NonNull;
 import lombok.ToString;
 import lombok.extern.java.Log;
+import uq.ecosoft.ctrack.controller.ArticleDatabase;
+import uq.ecosoft.ctrack.controller.UserDatabase;
 
 @Data @Log
 public class Article {
@@ -31,8 +34,13 @@ public class Article {
 
         likes.add(bigFan);
 
-        // TODO: Update DB
-        // ArticleDatabase.likeArticle(bigFan.getId(), this.getId());
+        // Sync to database
+        try {
+            ArticleDatabase.likeArticle(bigFan.getId(), this.getId());
+        } catch (SQLException e) {
+            log.warning("Database issue when liking article");
+            // TODO: Something else with the error?
+        }
     }
 
     /**
@@ -45,8 +53,13 @@ public class Article {
 
         likes.remove(hater);
 
-        // TODO: Update DB
-        // ArticleDatabase.unlikeArticle(hater.getId(), this.getId());
+        // Sync to database
+        try {
+            ArticleDatabase.unlikeArticle(hater.getId(), this.getId());
+        } catch (SQLException e) {
+            log.warning("Database issue when unliking article");
+            // TODO: Something else with the error?
+        }
     }
 
     @SuppressLint("DefaultLocale")
