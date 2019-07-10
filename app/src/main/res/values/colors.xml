@@ -4,6 +4,7 @@
     <color name="darkThemePrimary">#FF282828</color>
     <color name="darkThemeSecondary">#FF555555</color>
     <color name="greenPrimary">#62851E</color>
+    <color name="greenNeon">#4CAF50</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
 </resources>
