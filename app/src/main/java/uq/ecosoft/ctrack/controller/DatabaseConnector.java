@@ -6,6 +6,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import lombok.Getter;
+import lombok.Setter;
+
 public class DatabaseConnector {
     /**
      * Database connector that manages the connection to the SQL database
@@ -14,7 +17,9 @@ public class DatabaseConnector {
     private static final String DB_USERNAME = "root";
     private static final String DB_PASSWORD = "supercoolpassword";
     private static final String DB_DEFAULT_DATABASE = "ecosoft";
-    private static String DB_DATABASE = "ecosoft";
+
+    @Getter @Setter
+    private static String currentDatabase = "ecosoft";
 
     /**
      * Get a connection to the database
@@ -23,15 +28,7 @@ public class DatabaseConnector {
      * @throws SQLException
      */
     public static Connection getConnection() throws SQLException {
-        return DriverManager.getConnection(DB_URL + DB_DATABASE, DB_USERNAME, DB_PASSWORD);
-    }
-
-    /**
-     * Probably a disaster function - be careful
-     * Changes the current Database being used in the DatabaseConnector
-     */
-    public static void changeDatabase(String database) {
-        DatabaseConnector.DB_DATABASE = database;
+        return DriverManager.getConnection(DB_URL + currentDatabase, DB_USERNAME, DB_PASSWORD);
     }
 
     /**
@@ -39,7 +36,7 @@ public class DatabaseConnector {
      * Resets the database to the default one in settings
      */
     public static void resetDatabase() {
-        DatabaseConnector.DB_DATABASE = DB_DEFAULT_DATABASE;
+        setCurrentDatabase(DB_DEFAULT_DATABASE);
     }
 
     /**
