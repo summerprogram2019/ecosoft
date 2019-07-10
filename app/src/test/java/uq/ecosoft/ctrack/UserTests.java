@@ -6,7 +6,7 @@ import java.util.Date;
 
 import uq.ecosoft.ctrack.model.User;
 import uq.ecosoft.ctrack.model.activities.ActivityInstance;
-import uq.ecosoft.ctrack.model.activities.ActivityType;
+import uq.ecosoft.ctrack.model.activities.Activity;
 
 import static org.junit.Assert.assertEquals;
 
@@ -32,25 +32,25 @@ public class UserTests {
     public void testActivities() {
         User u = TestUtil.createNewUser(0, "Sunny");
 
-        ActivityInstance i1 = new ActivityInstance(ActivityType.WALKING, new Date(), 100);
-        ActivityInstance i2 = new ActivityInstance(ActivityType.DRIVING, new Date(), 10);
-        ActivityInstance i3 = new ActivityInstance(ActivityType.WALKING, new Date(), 300);
+        ActivityInstance i1 = new ActivityInstance(Activity.WALKING, new Date(), 100);
+        ActivityInstance i2 = new ActivityInstance(Activity.DRIVING, new Date(), 10);
+        ActivityInstance i3 = new ActivityInstance(Activity.WALKING, new Date(), 300);
 
         assertEquals(new Integer(0), u.calculateTotalScore());
-        assertEquals(new Integer(0), u.calculateActivityScore(ActivityType.WALKING));
-        assertEquals(new Integer(0), u.calculateActivityScore(ActivityType.DRIVING));
+        assertEquals(new Integer(0), u.calculateActivityScore(Activity.WALKING));
+        assertEquals(new Integer(0), u.calculateActivityScore(Activity.DRIVING));
         u.getActivities().add(i1);
         assertEquals(new Integer(1000), u.calculateTotalScore());
-        assertEquals(new Integer(1000), u.calculateActivityScore(ActivityType.WALKING));
-        assertEquals(new Integer(0), u.calculateActivityScore(ActivityType.DRIVING));
+        assertEquals(new Integer(1000), u.calculateActivityScore(Activity.WALKING));
+        assertEquals(new Integer(0), u.calculateActivityScore(Activity.DRIVING));
         u.getActivities().add(i2);
         assertEquals(new Integer(0), u.calculateTotalScore());
-        assertEquals(new Integer(1000), u.calculateActivityScore(ActivityType.WALKING));
-        assertEquals(new Integer(-1000), u.calculateActivityScore(ActivityType.DRIVING));
+        assertEquals(new Integer(1000), u.calculateActivityScore(Activity.WALKING));
+        assertEquals(new Integer(-1000), u.calculateActivityScore(Activity.DRIVING));
         u.getActivities().add(i3);
         assertEquals(new Integer(3000), u.calculateTotalScore());
-        assertEquals(new Integer(4000), u.calculateActivityScore(ActivityType.WALKING));
-        assertEquals(new Integer(-1000), u.calculateActivityScore(ActivityType.DRIVING));
+        assertEquals(new Integer(4000), u.calculateActivityScore(Activity.WALKING));
+        assertEquals(new Integer(-1000), u.calculateActivityScore(Activity.DRIVING));
     }
 
     private void friendArrayCheck(User a, Integer aRequests, Integer aFriends,

@@ -8,7 +8,7 @@ import lombok.extern.java.Log;
 
 @Data @Log
 public class ActivityInstance {
-    @NonNull ActivityType activityType;
+    @NonNull Activity activityType;
     @NonNull Date time;
     @NonNull Integer units;
 

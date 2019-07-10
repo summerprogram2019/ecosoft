@@ -9,7 +9,8 @@ import lombok.NonNull;
 import lombok.ToString;
 import lombok.extern.java.Log;
 import uq.ecosoft.ctrack.model.activities.ActivityInstance;
-import uq.ecosoft.ctrack.model.activities.ActivityType;
+import uq.ecosoft.ctrack.model.activities.Activity;
+import uq.ecosoft.ctrack.model.garden.PlantInstance;
 
 @Data @Log
 public class User {
@@ -17,7 +18,7 @@ public class User {
     @NonNull String username;
     @NonNull String password;
     @NonNull String realName;
-    @NonNull Garden garden;
+    @NonNull List<PlantInstance> garden;
     @NonNull Settings settings;
 
     @NonNull @ToString.Exclude @EqualsAndHashCode.Exclude List<Goal> goals;
@@ -167,7 +168,7 @@ public class User {
      * @param actType the type of activity to total
      * @return the total of all the scores matching {@param actType}
      */
-    public Integer calculateActivityScore(ActivityType actType) {
+    public Integer calculateActivityScore(Activity actType) {
         Integer result = 0;
         for (ActivityInstance a : activities) {
             if (a.getActivityType().equals(actType)) {

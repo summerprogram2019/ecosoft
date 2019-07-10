@@ -6,13 +6,12 @@ import java.util.HashSet;
 import java.util.Random;
 
 import uq.ecosoft.ctrack.model.Article;
-import uq.ecosoft.ctrack.model.Garden;
 import uq.ecosoft.ctrack.model.Goal;
 import uq.ecosoft.ctrack.model.Settings;
 import uq.ecosoft.ctrack.model.User;
 import uq.ecosoft.ctrack.model.activities.ActivityInstance;
 
-public class TestUtil {
+public abstract class TestUtil {
     private static Random r = new Random();
 
     /**

@@ -14,18 +14,12 @@ import lombok.extern.java.Log;
 
 @Data @Log
 public class Article {
-    @NonNull
-    Integer id;
-    @NonNull
-    String title;
-    @NonNull
-    String description;
-    @NonNull
-    String url;
-    @NonNull
-    Date time;
-    @NonNull @ToString.Exclude @EqualsAndHashCode.Exclude
-    Set<User> likes;
+    @NonNull Integer id;
+    @NonNull String title;
+    @NonNull String description;
+    @NonNull String url;
+    @NonNull Date time;
+    @NonNull @ToString.Exclude @EqualsAndHashCode.Exclude Set<User> likes;
 
     /**
      * Adds the given user into the like Set.

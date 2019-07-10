@@ -1,5 +1,6 @@
 apply plugin: 'com.android.application'
 apply plugin: 'checkstyle'
+loadConfig()
 
 android {
     compileSdkVersion 29
@@ -32,3 +33,21 @@ dependencies {
     compileOnly 'org.projectlombok:lombok:1.18.8'
     annotationProcessor 'org.projectlombok:lombok:1.18.8'
 }
+
+def loadConfig() {
+    def environment = hasProperty('conn') ? conn : 'local'
+    ext.setProperty 'environment', environment
+    println "Environment is set to $environment"
+
+    def configFile = file('config.groovy')
+    def config = new ConfigSlurper(environment).parse(configFile.toURL())
+    ext.setProperty 'config', config
+
+    println "Set the following properties"
+    println "ECO_DB_URL: $config.ECO_DB_URL"
+    println "ECO_DB_USR: $config.ECO_DB_USR"
+    println "ECO_DB_PWD: $config.ECO_DB_PWD"
+    System.properties["ECO_DB_PWD"] = "$config.ECO_DB_PWD"
+}
+
+task set
