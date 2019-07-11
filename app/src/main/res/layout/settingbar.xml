@@ -16,6 +16,9 @@
             android:layout_height="35dp"
             android:layout_marginStart="363dp"
             android:layout_marginTop="17dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:onClick="linkToSettings"
             app:srcCompat="@drawable/gear" />
     </RelativeLayout>
 

@@ -24,8 +24,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.07999998"
-        app:srcCompat="@drawable/logo"
-        tools:srcCompat="@drawable/logo"
+        app:srcCompat="@drawable/logo_trans"
         tools:visibility="visible" />
 
 
@@ -111,5 +110,26 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.335" />
+
+    <TextView
+        android:id="@+id/labelBetterUI"
+        android:layout_width="199dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="#4CAF50"
+        android:clickable="true"
+        android:focusable="true"
+        android:onClick="linkToBetterUI"
+        android:text="Pay 100 RMB to upgrade to better UI"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.915" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
