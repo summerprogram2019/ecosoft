@@ -62,4 +62,5 @@
     <string name="rank">拍行</string>
     <string name="point">分</string>
     <string name="name">名字</string>
+    <string name="forgot_password">忘记密码</string>
 </resources>
