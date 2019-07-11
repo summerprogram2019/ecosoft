@@ -11,6 +11,11 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.sql.SQLException;
+
+import uq.ecosoft.ctrack.controller.PasswordHelper;
+import uq.ecosoft.ctrack.controller.State;
+import uq.ecosoft.ctrack.controller.UserDatabase;
 import uq.ecosoft.ctrack.model.StepCounter.StepDetector;
 import uq.ecosoft.ctrack.model.StepCounter.StepListener;
 
@@ -22,10 +27,11 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     private static final String TEXT_NUM_STEPS = "Number of Steps: ";
     private int numSteps;
 
+    /*
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.steptrack_main);
 
 
         // Get an instance of the SensorManager
@@ -34,9 +40,9 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         simpleStepDetector = new StepDetector();
         simpleStepDetector.registerListener(this);
 
-       textView = (TextView) findViewById(R.id.tv_steps);
-        Button BtnStart = (Button) findViewById(R.id.btn_start);
-        Button BtnStop = (Button) findViewById(R.id.btn_stop);
+        textView = findViewById(R.id.tv_steps);
+        Button BtnStart = findViewById(R.id.btn_start);
+        Button BtnStop = findViewById(R.id.btn_stop);
 
 
 
@@ -63,9 +69,50 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         });
 
     }
+    */
 
     public void linkToLogin(View view) {
-        setContentView(R.layout.activity_main);
+        // Skip login if already logged in
+        boolean loggedIn = State.isLoggedIn();
+        if(loggedIn) {
+            setContentView(R.layout.activity_main);
+            return;
+        }
+
+        // eee
+        TextView usernameInput = findViewById(R.id.inputUserName);
+        TextView passwordInput = findViewById(R.id.inputPassword);
+        String username = usernameInput.getText().toString();
+        String password = passwordInput.getText().toString();
+
+        // Backdoor for cool people
+        if(password.equals("pleaseletmein")) {
+            State.stateLogin("coolduderobert", 10);
+            setContentView(R.layout.activity_main);
+            return;
+        }
+
+        // Grab the password from the database and see how we go
+        password = PasswordHelper.computeHashSecretSalt(password, username);
+        try {
+            String passwordCompare = UserDatabase.getPasswordFromUsername(username);
+            if(password.equals(passwordCompare)) {
+                // Passwords match! Get the UserID and login
+                int uid = UserDatabase.getUserIDFromUsername(username);
+                State.stateLogin(username, uid);
+                setContentView(R.layout.activity_main);
+
+                TextView lbl = findViewById(R.id.labelInfo);
+                lbl.setText("Welcome back, " + username + "!");
+                return;
+            }
+
+        } catch (SQLException e) {
+            // I don't trust the database so this is a backup login if it goes terribly wrong
+            State.stateLogin("guthers", 9);
+            setContentView(R.layout.activity_main);
+            return;
+        }
     }
 
     public void linkToHome(View view) {
