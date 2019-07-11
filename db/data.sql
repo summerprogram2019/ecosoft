@@ -7,11 +7,11 @@ INSERT INTO `user` (`uid`, `username`, `password`) VALUES
 	(6, 'voyager2', 'oriaaron'),
 	(7, 'lolcatz', 'kangjakh');
 
-INSERT INTO `activities` (`id`, `name`, `points`) VALUES
-	(1, 'act_step', 1),
-	(2, 'act_planttree', 250),
-	(3, 'act_nostraw', 50),
-	(4, 'act_bus', 150);
+INSERT INTO `activities` (`id`, `name`) VALUES
+	(1, 'act_step'),
+	(2, 'act_drive'),
+	(3, 'act_nostraw'),
+	(4, 'act_bus');
 
 INSERT INTO `articles` (`id`, `title`, `description`, `url`, `date`) VALUES
 	(1, 'Bees & Why They\'re Important', 'Bees are some of the most important creatures in the world.', 'bees.com', '2019-07-04 08:45:00'),

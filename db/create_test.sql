@@ -1,5 +1,5 @@
-CREATE DATABASE IF NOT EXISTS `ecosoft`;
-USE `ecosoft`;
+CREATE DATABASE IF NOT EXISTS `ecosoft_test`;
+USE `ecosoft_test`;
 
 CREATE TABLE IF NOT EXISTS `user` (
   `uid` int(12) NOT NULL AUTO_INCREMENT,
@@ -12,6 +12,7 @@ CREATE TABLE IF NOT EXISTS `user` (
 CREATE TABLE IF NOT EXISTS `activities` (
   `id` int(12) NOT NULL AUTO_INCREMENT,
   `name` varchar(64) NOT NULL,
+  `points` smallint(6) NOT NULL,
   PRIMARY KEY (`id`)
 ) COMMENT='Keeps track of the various activities that a user can perform to earn points';
 
