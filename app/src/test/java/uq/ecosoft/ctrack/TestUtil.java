@@ -20,9 +20,8 @@ public abstract class TestUtil {
      * @return a newly created User instance
      */
     public static User createNewUser(Integer id, String username) {
-        return new User(id, username, "hunter2", username,
-                new ArrayList<PlantInstance>(), new Settings(), new ArrayList<Goal>()
-                , new ArrayList<ActivityInstance>(), new HashSet<User>(), new HashSet<User>());
+        return new User(id, username, "hunter2", username, new ArrayList<PlantInstance>(),
+                new ArrayList<ActivityInstance>(), new HashSet<User>(), new HashSet<User>());
     }
 
     /**
