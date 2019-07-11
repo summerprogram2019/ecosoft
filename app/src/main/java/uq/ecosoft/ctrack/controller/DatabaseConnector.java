@@ -13,9 +13,9 @@ public class DatabaseConnector {
     /**
      * Database connector that manages the connection to the SQL database
      */
-    private static final String DB_URL = "jdbc:mysql://localhost:3306/";
+    private static final String DB_URL = "jdbc:mysql://207.148.87.93:3306/";
     private static final String DB_USERNAME = "root";
-    private static final String DB_PASSWORD = "supercoolpassword";
+    private static final String DB_PASSWORD = "harry";
     private static final String DB_DEFAULT_DATABASE = "ecosoft";
 
     @Getter @Setter
@@ -28,6 +28,11 @@ public class DatabaseConnector {
      * @throws SQLException
      */
     public static Connection getConnection() throws SQLException {
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+        } catch (ClassNotFoundException e) {
+            throw new SQLException("Could not register jdbc driver");
+        }
         return DriverManager.getConnection(DB_URL + currentDatabase, DB_USERNAME, DB_PASSWORD);
     }
 

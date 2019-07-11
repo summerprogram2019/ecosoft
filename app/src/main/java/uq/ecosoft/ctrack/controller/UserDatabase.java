@@ -9,8 +9,6 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 
-import uq.ecosoft.ctrack.model.Goal;
-import uq.ecosoft.ctrack.model.Settings;
 import uq.ecosoft.ctrack.model.User;
 import uq.ecosoft.ctrack.model.activities.ActivityInstance;
 import uq.ecosoft.ctrack.model.garden.PlantInstance;
@@ -99,33 +97,11 @@ public class UserDatabase {
             q.setInt(1, id);
             rs = q.executeQuery();
 
-            /*
-            // Query to generate the set of friends for the user
-            PreparedStatement q2 = con.prepareStatement("SELECT * FROM friends WHERE user1 = ?");
-            q2.setInt(1, id);
-            ResultSet rs2 = q.executeQuery();
-            HashSet<User> friends = new HashSet<>();
-            while(rs2.next()) {
-                friends.add(rs2.getInt("friend2"));
-            }
-
-            // Query to find any unaccepted friend requests
-            PreparedStatement q3 = con.prepareStatement("SELECT * FROM friends WHERE user2 = ? AND user1 NOT IN (SELECT * FROM friends WHERE user1 = ?");
-            q3.setInt(1, id);
-            q3.setInt(2, id);
-            ResultSet rs3 = q.executeQuery();
-            HashSet<User> friendRequests = new HashSet<>();
-            while(rs3.next()) {
-
-            }
-            */
-
             rs.first();
             String username = rs.getString("username");
             String password = rs.getString("password");
-            return new User(id, username, password, username, new ArrayList<PlantInstance>(), new Settings(),
-                    new ArrayList<Goal>() ,new ArrayList<ActivityInstance>(),
-                    new HashSet<User>(), new HashSet<User>());
+            return new User(id, username, password, username, new ArrayList<PlantInstance>() ,
+                    new ArrayList<ActivityInstance>(), new HashSet<User>(), new HashSet<User>());
         } catch (SQLException e) {
             throw e;
         } finally {
