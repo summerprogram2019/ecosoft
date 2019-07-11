@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/navContainer"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="#191919"
+        android:gravity="bottom|center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+        <LinearLayout
+            android:id="@+id/homeContainer"
+            android:layout_width="96dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:textAlignment="center"
+            android:onClick="linkToHome"
+            android:clickable="true"
+            android:focusable="true">
+
+            <ImageView
+                android:id="@+id/imageHome"
+                android:layout_width="55dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:paddingTop="10dp"
+                android:clickable="true"
+                android:contentDescription="@string/home"
+                android:focusable="true"
+                android:onClick="linkToHome"
+                app:srcCompat="@drawable/green_home" />
+
+            <TextView
+                android:id="@+id/labelHome"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|bottom"
+                android:clickable="true"
+                android:focusable="true"
+                android:fontFamily="sans-serif-smallcaps"
+                android:gravity="center"
+                android:onClick="linkToHome"
+                android:text="@string/home"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/activitiesContainer"
+            android:layout_width="96dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:textAlignment="center"
+            android:onClick="linkToActivities"
+            android:clickable="true"
+            android:focusable="true">
+
+            <ImageView
+                android:id="@+id/imageActivities"
+                android:layout_width="55dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:paddingTop="10dp"
+                android:clickable="true"
+                android:contentDescription="@string/activities"
+                android:focusable="true"
+                android:onClick="linkToHome"
+                app:srcCompat="@drawable/green_activities" />
+
+            <TextView
+                android:id="@+id/labelActivities"
+                android:layout_width="55dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|bottom"
+                android:clickable="true"
+                android:focusable="true"
+                android:fontFamily="sans-serif-smallcaps"
+                android:gravity="center"
+                android:onClick="linkToActivities"
+                android:text="@string/activities"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/socialContainer"
+            android:layout_width="96dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:textAlignment="center"
+            android:onClick="linkToSocial"
+            android:clickable="true"
+            android:focusable="true">
+
+            <ImageView
+                android:id="@+id/imageSocial"
+                android:layout_width="55dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:paddingTop="10dp"
+                android:clickable="true"
+                android:contentDescription="@string/social"
+                android:focusable="true"
+                android:onClick="linkToSocial"
+                app:srcCompat="@drawable/green_social" />
+
+            <TextView
+                android:id="@+id/labelSocial"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|bottom"
+                android:clickable="true"
+                android:focusable="true"
+                android:fontFamily="sans-serif-smallcaps"
+                android:gravity="center"
+                android:onClick="linkToSocial"
+                android:text="@string/social"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/profileContainer"
+            android:layout_width="96dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:textAlignment="center"
+            android:onClick="linkToProfile"
+            android:clickable="true"
+            android:focusable="true">
+
+            <ImageView
+                android:id="@+id/imageProfile"
+                android:layout_width="55dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:paddingTop="10dp"
+                android:clickable="true"
+                android:onClick="linkToProfile"
+                android:contentDescription="@string/profile"
+                android:focusable="true"
+                app:srcCompat="@drawable/green_profile" />
+
+            <TextView
+                android:id="@+id/labelProfile"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|bottom"
+                android:clickable="true"
+                android:focusable="true"
+                android:fontFamily="sans-serif-smallcaps"
+                android:gravity="center"
+                android:onClick="linkToProfile"
+                android:text="@string/profile"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
