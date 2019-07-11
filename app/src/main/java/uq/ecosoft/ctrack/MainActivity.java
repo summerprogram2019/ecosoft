@@ -1,13 +1,15 @@
 package uq.ecosoft.ctrack;
 
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-public class MainActivity extends AppCompatActivity {
 
 import uq.ecosoft.ctrack.model.StepCounter.StepDetector;
 import uq.ecosoft.ctrack.model.StepCounter.StepListener;
@@ -146,4 +148,13 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         textView.setText(s);
     }
 
+    @Override
+    public void onSensorChanged(SensorEvent sensorEvent) {
+        // do nothing
+    }
+
+    @Override
+    public void onAccuracyChanged(Sensor sensor, int i) {
+        // do nothing
+    }
 }
