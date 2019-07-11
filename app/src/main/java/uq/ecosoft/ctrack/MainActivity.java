@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main2);
 
 
         // Get an instance of the SensorManager
@@ -95,6 +95,10 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     public void linkToSteps(View view) { setContentView(R.layout.step_tracking); }
 
     public void linkToStepTrack(View view) { setContentView(R.layout.steptrack_main); }
+
+    public void linkToStepTrack(View view) {
+        setContentView(R.layout.steptrack_main);
+    }
 
     public void linkToGoals(View view) {
         setContentView(R.layout.goals);
