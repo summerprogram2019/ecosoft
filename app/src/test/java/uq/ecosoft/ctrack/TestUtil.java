@@ -3,12 +3,9 @@ package uq.ecosoft.ctrack;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Random;
 
 import uq.ecosoft.ctrack.model.Article;
-import uq.ecosoft.ctrack.model.Goal;
-import uq.ecosoft.ctrack.model.Settings;
 import uq.ecosoft.ctrack.model.User;
 import uq.ecosoft.ctrack.model.activities.ActivityInstance;
 import uq.ecosoft.ctrack.model.garden.PlantInstance;
