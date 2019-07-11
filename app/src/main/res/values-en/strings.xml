@@ -2,4 +2,64 @@
 <resources>
     <string name="goodbye_world">Goodbye World!</string>
     <string name="hello_world">Hello World!</string>
+    <string name="new_account">Create New Account</string>
+    <string name="log_in">Log in</string>
+    <string name="user_name">User name or email</string>
+    <string name="password">Password</string>
+    <string name="logo">Logo</string>
+    <string-array name="activities">
+        <item>Step Tracking</item>
+        <item>Goals</item>
+        <item>Daily Challenges</item>
+        <item>Future Activities</item>
+    </string-array>
+    <string name="terms_conditions">Accept Terms and Conditions</string>
+    <string name="verify">Verify</string>
+    <string name="username">User name</string>
+    <string name="email">Email</string>
+    <string name="verification_code">Enter Verification Code</string>
+    <string name="home">Home</string>
+    <string name="profile">Profile</string>
+    <string name="activities">Activities</string>
+    <string name="social">Social</string>
+    <string name="article_name">Article Name</string>
+    <string name="info">Info</string>
+    <string name="like">Like</string>
+    <string name="step_tracking">Step Tracking</string>
+    <string name="goals">Goals</string>
+    <string name="challenges">Daily Challenges</string>
+    <string name="future_activities">Future Activities</string>
+    <string name="back">Back</string>
+    <string name="leader_board">Leaderboard</string>
+    <string name="friends">Friends</string>
+    <string name="add_friends">Add Friends</string>
+    <string name="manage_friends">Manage Friends</string>
+    <string name="garden">Garden</string>
+    <string name="points">Environmental Impact</string>
+    <string name="settings">Settings</string>
+    <string-array name="profiles">
+        <item>Environmental Impact</item>
+        <item>Garden</item>
+    </string-array>
+    <string name="log_out">Log out</string>
+    <string-array name="time_frame">
+        <item>Hour</item>
+        <item>Day</item>
+        <item>Week</item>
+        <item>Month</item>
+        <item>Year</item>
+    </string-array>
+    <string-array name="goal_types">
+        <item>Step Tracking</item>
+        <item>Other</item>
+    </string-array>
+    <string-array name="sort_by">
+        <item>Sort By</item>
+    </string-array>
+    <string name="accept">Accept</string>
+    <string name="goal_type">Goal Type</string>
+    <string name="progress">Progress</string>
+    <string name="name">Name</string>
+    <string name="rank">Rank</string>
+    <string name="point">Points</string>
 </resources>
