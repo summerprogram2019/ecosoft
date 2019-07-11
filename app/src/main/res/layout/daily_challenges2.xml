@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_bg">
+
+    <include layout="@layout/navbar" />
+    <include layout="@layout/settingbar" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:fontFamily="sans-serif-smallcaps"
+        android:gravity="center_vertical"
+        android:paddingLeft="20dp"
+        android:text="@string/challenges"
+        android:textColor="@color/darkThemePrimary"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="530dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="69dp">
+
+        <Spinner
+            android:id="@+id/spinnerDropDown"
+            android:layout_width="270dp"
+            android:layout_height="50dp"
+            android:background="@color/darkThemePrimary"
+            android:entries="@array/activities"
+            android:textAlignment="center"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="50dp" />
+    </RelativeLayout>
+
+</RelativeLayout>
