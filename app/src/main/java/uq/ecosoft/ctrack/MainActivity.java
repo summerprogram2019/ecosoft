@@ -197,7 +197,10 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
     @Override
     public void onSensorChanged(SensorEvent sensorEvent) {
-        // do nothing
+        if (sensorEvent.sensor.getType() == Sensor.TYPE_ACCELEROMETER) {
+            simpleStepDetector.updateAccel(sensorEvent.timestamp, sensorEvent.values[0],
+                    sensorEvent.values[1], sensorEvent.values[2]);
+        }
     }
 
     @Override

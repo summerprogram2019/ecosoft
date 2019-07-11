@@ -13,7 +13,7 @@ public class DatabaseConnector {
     /**
      * Database connector that manages the connection to the SQL database
      */
-    private static final String DB_URL = "jdbc:mysql://207.148.87.93:3306:3306/";
+    private static final String DB_URL = "jdbc:mysql://207.148.87.93:3306/";
     private static final String DB_USERNAME = "root";
     private static final String DB_PASSWORD = "harry";
     private static final String DB_DEFAULT_DATABASE = "ecosoft";
