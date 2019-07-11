@@ -21,7 +21,9 @@ public class User {
     @NonNull String password;
     @NonNull String realName;
     @NonNull List<PlantInstance> garden;
+    @NonNull Settings settings;
 
+    @NonNull @ToString.Exclude @EqualsAndHashCode.Exclude List<Goal> goals;
     @NonNull @ToString.Exclude @EqualsAndHashCode.Exclude List<ActivityInstance> activities;
     @NonNull @ToString.Exclude @EqualsAndHashCode.Exclude Set<User> friendRequests;
     @NonNull @ToString.Exclude @EqualsAndHashCode.Exclude Set<User> friends;
