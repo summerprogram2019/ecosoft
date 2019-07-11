@@ -27,11 +27,11 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     private static final String TEXT_NUM_STEPS = "Number of Steps: ";
     private int numSteps;
 
-    /*
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.steptrack_main);
+        setContentView(R.layout.activity_main2);
+		return;
 
 
         // Get an instance of the SensorManager
@@ -69,7 +69,6 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         });
 
     }
-    */
 
     public void linkToLogin(View view) {
         // Skip login if already logged in
@@ -115,6 +114,10 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         }
     }
 
+    public void linkToBetterUI(View view) {
+        setContentView(R.layout.activity_main2);
+    }
+
     public void linkToHome(View view) {
         setContentView(R.layout.home);
     }
@@ -132,11 +135,15 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     }
 
     public void linkToActivities(View view) {
-        setContentView(R.layout.activities_home);
+        setContentView(R.layout.activities_home2);
     }
 
-    public void linkToSteps(View view) {
-        setContentView(R.layout.step_tracking);
+    public void linkToSteps(View view) { setContentView(R.layout.step_tracking); }
+
+    public void linkToStepTrack(View view) { setContentView(R.layout.steptrack_main); }
+
+    public void linkToStepTrack(View view) {
+        setContentView(R.layout.steptrack_main);
     }
 
     public void linkToGoals(View view) {
@@ -144,11 +151,11 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     }
 
     public void linkToChallenges(View view) {
-        setContentView(R.layout.daily_challenges);
+        setContentView(R.layout.daily_challenges2);
     }
 
     public void linkToFuture(View view) {
-        setContentView(R.layout.future_activities);
+        setContentView(R.layout.future_activities2);
     }
 
     public void linkToSocial(View view) {

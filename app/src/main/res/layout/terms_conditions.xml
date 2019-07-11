@@ -1,9 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/background"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F5F6F8">
+
+    <ImageView
+        android:id="@+id/imageBg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/gradient_bg" />
 
     <ImageView
         android:id="@+id/imageExit"
@@ -15,6 +27,7 @@
         android:layout_marginBottom="8dp"
         android:clickable="true"
         android:contentDescription="@string/back"
+        android:focusable="true"
         android:onClick="linkToSignUp"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -36,7 +49,7 @@
         android:text="@string/terms_conditions"
         android:textAlignment="center"
         android:textAllCaps="false"
-        android:textColor="#090000"
+        android:textColor="#FFFFFF"
         android:textSize="30sp"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -61,4 +74,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.366" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
