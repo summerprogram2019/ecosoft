@@ -10,7 +10,7 @@
     <include layout="@layout/settingbar" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/labelTitle"
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:fontFamily="sans-serif-smallcaps"

@@ -5,229 +5,51 @@
     android:id="@+id/background"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F5F6F8">
+    android:background="#00F5F6F8">
 
-    <ImageView
-        android:id="@+id/imageArticle"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
+    <include
+        layout="@layout/settingbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-        android:contentDescription="@string/article_name"
+        android:background="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.218"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.139"
-        app:srcCompat="@android:drawable/sym_def_app_icon" />
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_editor_absoluteX="53dp" />
 
-    <LinearLayout
-        android:id="@+id/navContainer"
-        android:layout_width="415dp"
-        android:layout_height="70dp"
-        android:layout_marginStart="8dp"
+    <include
+        layout="@layout/navbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:background="#90EE91"
-        android:gravity="bottom|center"
-        android:orientation="horizontal"
+        android:background="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0">
-
-        <LinearLayout
-            android:id="@+id/homeContainer"
-            android:layout_width="96dp"
-            android:layout_height="70dp"
-            android:orientation="vertical"
-            android:textAlignment="center">
-
-            <ImageView
-                android:id="@+id/imageHome"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_gravity="center"
-                android:clickable="true"
-                android:contentDescription="@string/home"
-                android:focusable="true"
-                android:onClick="linkToHome"
-                app:srcCompat="@drawable/green_home"
-                tools:layout_conversion_absoluteHeight="50dp"
-                tools:layout_conversion_absoluteWidth="50dp"
-                tools:layout_editor_absoluteX="13dp"
-                tools:layout_editor_absoluteY="622dp"
-                tools:srcCompat="@drawable/green_home" />
-
-            <TextView
-                android:id="@+id/labelHome"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:clickable="true"
-                android:focusable="true"
-                android:gravity="center"
-                android:onClick="linkToHome"
-                android:text="@string/home"
-                android:textAlignment="center"
-                android:textAllCaps="false"
-                android:textColor="#050000"
-                tools:layout_conversion_absoluteHeight="20dp"
-                tools:layout_conversion_absoluteWidth="50dp"
-                tools:layout_editor_absoluteX="13dp"
-                tools:layout_editor_absoluteY="680dp" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/activitiesContainer"
-            android:layout_width="100dp"
-            android:layout_height="70dp"
-            android:orientation="vertical">
-
-            <ImageView
-                android:id="@+id/imageActivities"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_gravity="center"
-                android:clickable="true"
-                android:contentDescription="@string/activities"
-                android:focusable="true"
-                android:onClick="linkToActivities"
-                app:srcCompat="@drawable/black_activities"
-                tools:layout_conversion_absoluteHeight="50dp"
-                tools:layout_conversion_absoluteWidth="50dp"
-                tools:layout_editor_absoluteX="109dp"
-                tools:layout_editor_absoluteY="622dp"
-                tools:srcCompat="@drawable/black_activities" />
-
-            <TextView
-                android:id="@+id/labelActivities"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:clickable="true"
-                android:focusable="true"
-                android:onClick="linkToActivities"
-                android:text="@string/activities"
-                android:textAlignment="center"
-                android:textAllCaps="false"
-                android:textColor="#050000"
-                tools:layout_conversion_absoluteHeight="20dp"
-                tools:layout_conversion_absoluteWidth="59dp"
-                tools:layout_editor_absoluteX="109dp"
-                tools:layout_editor_absoluteY="688dp" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/socialContainer"
-            android:layout_width="100dp"
-            android:layout_height="70dp"
-            android:orientation="vertical">
-
-            <ImageView
-                android:id="@+id/imageSocial"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_gravity="center"
-                android:clickable="true"
-                android:contentDescription="@string/social"
-                android:focusable="true"
-                android:onClick="linkToSocial"
-                app:srcCompat="@drawable/black_social"
-                tools:layout_conversion_absoluteHeight="50dp"
-                tools:layout_conversion_absoluteWidth="50dp"
-                tools:layout_editor_absoluteX="209dp"
-                tools:layout_editor_absoluteY="622dp"
-                tools:srcCompat="@drawable/black_social" />
-
-            <TextView
-                android:id="@+id/labelSocial"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:clickable="true"
-                android:focusable="true"
-                android:onClick="linkToSocial"
-                android:text="@string/social"
-                android:textAlignment="center"
-                android:textAllCaps="false"
-                android:textColor="#050000"
-                tools:layout_conversion_absoluteHeight="20dp"
-                tools:layout_conversion_absoluteWidth="50dp"
-                tools:layout_editor_absoluteX="209dp"
-                tools:layout_editor_absoluteY="680dp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/profileContainer"
-            android:layout_width="100dp"
-            android:layout_height="70dp"
-            android:orientation="vertical">
-
-            <ImageView
-                android:id="@+id/imageProfile"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_gravity="center"
-                android:clickable="true"
-                android:contentDescription="@string/profile"
-                android:focusable="true"
-                android:onClick="linkToProfile"
-                app:srcCompat="@drawable/black_profile"
-                tools:layout_conversion_absoluteHeight="50dp"
-                tools:layout_conversion_absoluteWidth="50dp"
-                tools:layout_editor_absoluteX="309dp"
-                tools:layout_editor_absoluteY="622dp"
-                tools:srcCompat="@drawable/black_profile" />
-
-            <TextView
-                android:id="@+id/labelProfile"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:clickable="true"
-                android:focusable="true"
-                android:focusableInTouchMode="false"
-                android:gravity="center"
-                android:onClick="linkToProfile"
-                android:text="@string/profile"
-                android:textAlignment="center"
-                android:textAllCaps="false"
-                android:textColor="#050000"
-                tools:layout_conversion_absoluteHeight="20dp"
-                tools:layout_conversion_absoluteWidth="42dp"
-                tools:layout_editor_absoluteX="309dp"
-                tools:layout_editor_absoluteY="688dp" />
-        </LinearLayout>
-    </LinearLayout>
+        app:layout_constraintVertical_bias="1.0"
+        tools:layout_editor_absoluteX="-16dp" />
 
     <TextView
         android:id="@+id/labelTitle"
-        android:layout_width="150dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
         android:layout_marginBottom="8dp"
+        android:background="#00000000"
+        android:fontFamily="sans-serif-smallcaps"
+        android:gravity="center_vertical"
+        android:paddingLeft="20dp"
         android:text="@string/home"
-        android:textAlignment="center"
-        android:textColor="#0A0000"
-        android:textSize="30sp"
+        android:textColor="@color/darkThemePrimary"
+        android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.024" />
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_editor_absoluteX="-16dp" />
 
     <TextView
         android:id="@+id/labelArticleName"
-        android:layout_width="112dp"
+        android:layout_width="229dp"
         android:layout_height="75dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
@@ -237,10 +59,10 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.66"
+        app:layout_constraintHorizontal_bias="0.421"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.149" />
+        app:layout_constraintVertical_bias="0.226" />
 
     <TextView
         android:id="@+id/labelInfo"
@@ -255,7 +77,7 @@
         app:layout_constraintHorizontal_bias="0.448"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.304" />
+        app:layout_constraintVertical_bias="0.33" />
 
     <Button
         android:id="@+id/buttonLike"
@@ -271,10 +93,10 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.472"
+        app:layout_constraintHorizontal_bias="0.293"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.772" />
+        app:layout_constraintVertical_bias="0.602" />
 
     <ListView
         android:id="@+id/listArticles"
@@ -290,6 +112,26 @@
         app:layout_constraintHorizontal_bias="0.421"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.552" />
+        app:layout_constraintVertical_bias="0.506" />
+
+    <ImageView
+        android:id="@+id/imageCurrent"
+        android:layout_width="55dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="#000000"
+        android:clickable="true"
+        android:focusable="true"
+        android:onClick="linkToHome"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.08"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.98"
+        app:srcCompat="@drawable/new_home2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

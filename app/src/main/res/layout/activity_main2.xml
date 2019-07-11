@@ -86,6 +86,7 @@
         android:layout_marginTop="215dp"
         android:background="@color/greenNeon"
         android:fontFamily="sans-serif-smallcaps"
+        android:onClick="linkToHome"
         android:text="@string/log_in"
         android:textColor="#FFFFFF"
         android:typeface="sans" />
@@ -109,8 +110,11 @@
         android:layout_below="@+id/imageView"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="400dp"
-        android:text="@string/new_account"
+        android:clickable="true"
+        android:focusable="true"
         android:gravity="center_horizontal"
+        android:onClick="linkToSignUp"
+        android:text="@string/new_account"
         android:textColor="@color/greenNeon"
         android:typeface="sans" />
 
