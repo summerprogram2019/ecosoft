@@ -6,13 +6,20 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import lombok.Getter;
+import lombok.Setter;
+
 public class DatabaseConnector {
     /**
      * Database connector that manages the connection to the SQL database
      */
-    private static final String DB_URL = "jdbc:mysql://localhost:3306/ecosoft";
+    private static final String DB_URL = "jdbc:mysql://207.148.87.93:3306/";
     private static final String DB_USERNAME = "root";
-    private static final String DB_PASSWORD = "supercoolpassword";
+    private static final String DB_PASSWORD = "harry";
+    private static final String DB_DEFAULT_DATABASE = "ecosoft";
+
+    @Getter @Setter
+    private static String currentDatabase = "ecosoft";
 
     /**
      * Get a connection to the database
@@ -21,7 +28,15 @@ public class DatabaseConnector {
      * @throws SQLException
      */
     public static Connection getConnection() throws SQLException {
-        return DriverManager.getConnection(DB_URL, DB_USERNAME, DB_PASSWORD);
+        return DriverManager.getConnection(DB_URL + currentDatabase, DB_USERNAME, DB_PASSWORD);
+    }
+
+    /**
+     * Probably a disaster function - be careful
+     * Resets the database to the default one in settings
+     */
+    public static void resetDatabase() {
+        setCurrentDatabase(DB_DEFAULT_DATABASE);
     }
 
     /**
@@ -38,6 +53,8 @@ public class DatabaseConnector {
             ps.close();
             con.close();
         } catch (SQLException e) {
+            // ignore
+        } catch (NullPointerException e) {
             // ignore
         }
     }

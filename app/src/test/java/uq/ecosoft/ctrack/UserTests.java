@@ -28,6 +28,7 @@ public class UserTests {
         friendArrayCheck(a, 0, 0, b, 0, 0);
     }
 
+    /*
     @Test
     public void testActivities() {
         User u = TestUtil.createNewUser(0, "Sunny");
@@ -52,6 +53,7 @@ public class UserTests {
         assertEquals(new Integer(400), u.calculateActivityScore(Activity.WALKING));
         assertEquals(new Integer(-500), u.calculateActivityScore(Activity.DRIVING));
     }
+    */
 
     private void friendArrayCheck(User a, Integer aRequests, Integer aFriends,
                                   User b, Integer bRequests, Integer bFriends) {

@@ -3,6 +3,7 @@ package uq.ecosoft.ctrack;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Random;
 
 import uq.ecosoft.ctrack.model.Article;
