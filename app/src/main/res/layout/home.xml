@@ -5,7 +5,7 @@
     android:id="@+id/background"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#00F5F6F8">
+    android:background="#4CAF50">
 
     <ImageView
         android:id="@+id/imageBg"
@@ -94,13 +94,14 @@
             android:layout_height="54dp"
             android:layout_marginBottom="8dp"
             android:background="#00090000"
-            android:text="One of the largest and most beautiful rainforests in the world is slowly being destroyed by climate change" />
+            android:text="One of the largest and most beautiful rainforests in the world is slowly being destroyed by climate change." />
 
         <Button
-            android:id="@+id/button5"
+            android:id="@+id/btnArticle2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#4CAF50"
+            android:onClick="likeArticle2"
             android:text="@string/like" />
     </LinearLayout>
 
@@ -145,10 +146,11 @@
             android:text="The icecaps are melting. The polar bears are in danger. Only you can save them." />
 
         <Button
-            android:id="@+id/button6"
+            android:id="@+id/btnArticle1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#4CAF50"
+            android:onClick="likeArticle1"
             android:text="@string/like" />
     </LinearLayout>
 

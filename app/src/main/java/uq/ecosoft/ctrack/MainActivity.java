@@ -248,6 +248,18 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         setContentView(R.layout.settings);
     }
 
+    public void likeArticle1(View view) {
+        likeArticle(view,R.id.btnArticle1);
+    }
+
+    public void likeArticle2(View view) {
+        likeArticle(view,R.id.btnArticle2);
+    }
+
+    public void likeArticle(View view, int id) {
+        ((TextView)view.findViewById(id)).setText("liked");
+    }
+
     @Override
     public void step(long timeNs) {
         numSteps++;
