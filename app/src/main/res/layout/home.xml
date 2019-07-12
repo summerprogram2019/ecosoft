@@ -75,7 +75,7 @@
 
         <ImageView
             android:layout_width="300dp"
-            android:layout_height="150dp"
+            android:layout_height="100dp"
             android:background="#00000000"
             android:scaleType="fitXY"
             app:srcCompat="@drawable/forest" />
@@ -100,6 +100,7 @@
             android:id="@+id/button5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#4CAF50"
             android:text="@string/like" />
     </LinearLayout>
 
@@ -120,7 +121,7 @@
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="300dp"
-            android:layout_height="150dp"
+            android:layout_height="100dp"
             android:background="#00000000"
             android:scaleType="fitXY"
             app:srcCompat="@drawable/ice" />
@@ -142,6 +143,13 @@
             android:layout_marginBottom="8dp"
             android:background="#00090000"
             android:text="The icecaps are melting. The polar bears are in danger. Only you can save them." />
+
+        <Button
+            android:id="@+id/button6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#4CAF50"
+            android:text="@string/like" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

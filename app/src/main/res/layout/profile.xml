@@ -16,8 +16,9 @@
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/gradient_bg"
-        tools:layout_editor_absoluteX="129dp" />
+        tools:layout_editor_absoluteX="0dp" />
 
     <include
         layout="@layout/navbar"
@@ -90,7 +91,7 @@
         android:clickable="true"
         android:focusable="true"
         android:onClick="linkToPoints"
-        android:text="@string/points"
+        android:text="GP"
         android:textColor="#FFFFFF"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"

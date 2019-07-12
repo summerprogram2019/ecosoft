@@ -144,11 +144,12 @@
                 android:text="@string/activities"
                 android:textColor="#FFFFFF" />
 
-            <ListView
-                android:id="@+id/listActivities"
+            <TextView
+                android:id="@+id/textView3"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="#4CAF50" />
+                android:layout_height="wrap_content"
+                android:text="@string/step_tracking" />
+
         </LinearLayout>
 
         <LinearLayout
@@ -164,11 +165,11 @@
                 android:text="@string/points"
                 android:textColor="#FFFFFF" />
 
-            <ListView
-                android:id="@+id/listImpact"
+            <TextView
+                android:id="@+id/textView4"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="#4CAF50" />
+                android:layout_height="wrap_content"
+                android:text="0 Steps made to save mother nature" />
 
         </LinearLayout>
     </LinearLayout>

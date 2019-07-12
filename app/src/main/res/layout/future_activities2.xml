@@ -7,16 +7,39 @@
     android:background="@drawable/gradient_bg">
 
     <include layout="@layout/navbar" />
+
     <include layout="@layout/settingbar" />
+
+    <ImageButton
+        android:id="@+id/imageBack2"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="#00FFFFFF"
+        android:contentDescription="@string/back"
+        android:onClick="linkToActivities"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.00999999"
+        app:srcCompat="@android:drawable/ic_menu_revert" />
 
     <TextView
         android:id="@+id/labelTitle"
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_width="wrap_content"
+        android:layout_height="55dp"
+        android:layout_alignStart="@+id/imageBack2"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="41dp"
+        android:layout_marginEnd="162dp"
         android:fontFamily="sans-serif-smallcaps"
         android:gravity="center_vertical"
         android:paddingLeft="20dp"
-        android:text="@string/future_activities"
+        android:text="@string/activities"
         android:textColor="@color/darkThemePrimary"
         android:textSize="24sp"
         android:textStyle="bold" />
@@ -31,12 +54,12 @@
             android:id="@+id/spinnerDropDown"
             android:layout_width="270dp"
             android:layout_height="50dp"
-            android:background="@color/darkThemePrimary"
-            android:entries="@array/activities"
-            android:textAlignment="center"
-            android:layout_centerHorizontal="true"
             android:layout_alignParentTop="true"
-            android:layout_marginTop="50dp" />
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dp"
+            android:background="@color/darkThemePrimary"
+            android:entries="@array/activities4"
+            android:textAlignment="center" />
     </RelativeLayout>
 
 </RelativeLayout>

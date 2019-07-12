@@ -100,7 +100,10 @@
         android:layout_below="@+id/imageGarden"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="285dp"
+        android:clickable="true"
+        android:focusable="true"
         android:gravity="center_horizontal"
+        android:onClick="linkToHome"
         android:text="@string/forgot_password"
         android:textColor="#FFFFFF"
         android:typeface="sans" />

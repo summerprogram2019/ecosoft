@@ -10,10 +10,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.MenuPopupWindow;
 
 import lombok.extern.java.Log;
 import uq.ecosoft.ctrack.model.StepCounter.StepDetector;
@@ -26,13 +28,16 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     private SensorManager sensorManager;
     private Sensor accel;
     private static final String TEXT_NUM_STEPS = "Number of Steps: ";
-    private int numSteps;
+    private int numSteps = 0;
 
     // Navbar buttons //
     private ImageView homeImage;
     private ImageView activityImage;
     private ImageView socialImage;
     private ImageView profileImage;
+
+    // Steps //
+    private int totalSteps = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -150,6 +155,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                     sensorManager.unregisterListener(MainActivity.this);
                     BtnStart.setBackgroundColor(Color.GREEN);
                     BtnStart.setText("START TRACKING");
+                    totalSteps += numSteps;
                 }
 
 
@@ -197,18 +203,45 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         setContentView(R.layout.profile);
         initImageView();
         toggleImage(profileImage, "profile");
+        if (totalSteps > 0) {
+            ((TextView) findViewById(R.id.labelPoints)).setText(String.format("%d GP", totalSteps));
+        }
+
+        updateTree();
+    }
+
+    public void updateTree() {
+        if (totalSteps < 10) {
+            // do nothing
+        } else if (totalSteps < 20) {
+            // stage 2 tree
+            ((ImageView) findViewById(R.id.imageGarden)).setImageResource(R.drawable.tree2);
+        } else if (totalSteps < 50) {
+            // stage 3 tree
+            ((ImageView) findViewById(R.id.imageGarden)).setImageResource(R.drawable.tree3);
+        } else {
+            // stage 4 tree
+            ((ImageView) findViewById(R.id.imageGarden)).setImageResource(R.drawable.tree4);
+        }
     }
 
     public void linkToPoints(View view) {
         setContentView(R.layout.points);
         initImageView();
         toggleImage(profileImage, "profile");
+
+        if (totalSteps > 0) {
+            ((TextView) findViewById(R.id.labelPoints)).setText(String.format("%d GP", totalSteps));
+            ((TextView) findViewById(R.id.textView4)).setText(String.format("%d Steps made to save mother nature", totalSteps));
+        }
     }
 
     public void linkToGarden(View view) {
         setContentView(R.layout.garden);
         initImageView();
         toggleImage(profileImage, "profile");
+
+        updateTree();
     }
 
     public void linkToSettings(View view) {
