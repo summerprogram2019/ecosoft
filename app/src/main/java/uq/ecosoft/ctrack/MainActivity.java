@@ -94,12 +94,6 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
     public void linkToSteps(View view) { setContentView(R.layout.step_tracking); }
 
-    public void linkToStepTrack(View view) { setContentView(R.layout.steptrack_main); }
-
-    public void linkToStepTrack(View view) {
-        setContentView(R.layout.steptrack_main);
-    }
-
     public void linkToGoals(View view) {
         setContentView(R.layout.goals);
     }
