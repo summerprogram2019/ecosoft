@@ -63,4 +63,9 @@
     <string name="rank">Rank</string>
     <string name="name">Name</string>
     <string name="point">Points</string>
+    <string-array name="setting">
+        <item>Personal Details</item>
+        <item>Privacy</item>
+        <item>Upgrade</item>
+    </string-array>
 </resources>
