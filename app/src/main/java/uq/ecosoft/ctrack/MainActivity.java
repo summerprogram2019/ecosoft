@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     }
 
     public void linkToLogin(View view) {
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main2);
     }
 
     public void linkToBetterUI(View view) {
