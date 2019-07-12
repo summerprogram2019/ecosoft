@@ -74,30 +74,33 @@
         app:layout_constraintVertical_bias="0.81">
 
         <ImageView
-            android:id="@+id/imageView"
             android:layout_width="300dp"
             android:layout_height="150dp"
             android:background="#00000000"
             android:scaleType="fitXY"
-            app:srcCompat="@drawable/ice" />
+            app:srcCompat="@drawable/forest" />
 
         <TextView
-            android:id="@+id/labelArticleName"
             android:layout_width="300dp"
             android:layout_height="27dp"
             android:background="#00090000"
-            android:text="Polar Bears: Extinction"
+            android:text="Deforesting the Amazon"
             android:textAlignment="center"
             android:textSize="18sp"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/labelInfo"
             android:layout_width="300dp"
             android:layout_height="54dp"
             android:layout_marginBottom="8dp"
             android:background="#00090000"
-            android:text="The icecaps are melting. The polar bears are in danger. Only you can save them." />
+            android:text="One of the largest and most beautiful rainforests in the world is slowly being destroyed by climate change" />
+
+        <Button
+            android:id="@+id/button5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/like" />
     </LinearLayout>
 
     <LinearLayout
@@ -133,7 +136,7 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/labelInfo"
+            android:id="@+id/l"
             android:layout_width="300dp"
             android:layout_height="54dp"
             android:layout_marginBottom="8dp"
