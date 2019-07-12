@@ -28,11 +28,6 @@ public class DatabaseConnector {
      * @throws SQLException
      */
     public static Connection getConnection() throws SQLException {
-        try {
-            Class.forName("com.mysql.jdbc.Driver");
-        } catch (ClassNotFoundException e) {
-            throw new SQLException("Could not register jdbc driver");
-        }
         return DriverManager.getConnection(DB_URL + currentDatabase, DB_USERNAME, DB_PASSWORD);
     }
 
