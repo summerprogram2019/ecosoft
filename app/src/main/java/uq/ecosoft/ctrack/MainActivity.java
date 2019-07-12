@@ -4,9 +4,11 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
+import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,6 +23,13 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     private Sensor accel;
     private static final String TEXT_NUM_STEPS = "Number of Steps: ";
     private int numSteps;
+
+    // Navbar buttons //
+    private ImageView homeImage;
+    private ImageView activityImage;
+    private ImageView socialImage;
+    private ImageView profileImage;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,6 +83,31 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
     public void linkToHome(View view) {
         setContentView(R.layout.home);
+        initImageView();
+        toggleImage(homeImage, "home");
+    }
+
+    public void initImageView() {
+        homeImage = findViewById(R.id.imageHome);
+        activityImage = findViewById(R.id.imageActivities);
+        socialImage = findViewById(R.id.imageSocial);
+        profileImage = findViewById(R.id.imageProfile);
+    }
+
+    public void toggleImage(ImageView img, String imageName) {
+        switch (imageName) {
+            case "home": {
+                img.setImageResource(R.drawable.new_home2);
+            }case "activity": {
+                img.setImageResource(R.drawable.new_activity2);
+            }case "social": {
+                img.setImageResource(R.drawable.new_social2);
+            }case "profile": {
+                img.setImageResource(R.drawable.new_profile2);
+            }default: {
+                System.exit(-1);
+            }
+        }
     }
 
     public void linkToTcs(View view) {
@@ -90,6 +124,8 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
     public void linkToActivities(View view) {
         setContentView(R.layout.activities_home2);
+        initImageView();
+        toggleImage(activityImage, "activity");
     }
 
     public void linkToSteps(View view) { setContentView(R.layout.step_tracking); }
@@ -112,6 +148,8 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
     public void linkToFriends(View view) {
         setContentView(R.layout.social_friends);
+        initImageView();
+        toggleImage(socialImage, "social");
     }
 
     public void linkToManage(View view) {
@@ -120,6 +158,8 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
     public void linkToProfile(View view) {
         setContentView(R.layout.profile);
+        initImageView();
+        toggleImage(profileImage, "profile");
     }
 
     public void linkToPoints(View view) {
