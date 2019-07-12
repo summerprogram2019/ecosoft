@@ -1,5 +1,6 @@
 package uq.ecosoft.ctrack;
 
+import android.content.DialogInterface;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -12,6 +13,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.sql.SQLException;
@@ -37,7 +39,6 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     private ImageView activityImage;
     private ImageView socialImage;
     private ImageView profileImage;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,6 +71,14 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
             setContentView(R.layout.home);
             initImageView();
             toggleImage(homeImage, "home");
+        } else {
+            AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this).create();
+            alertDialog.setTitle("Invalid Credentials");
+            alertDialog.setMessage("The username or password you entered were incorrect. " +
+                    "Please enter the correct credentials and try again");
+            alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, "OK",
+                    (dialogInterface, i) -> dialogInterface.dismiss());
+            alertDialog.show();
         }
     }
 
