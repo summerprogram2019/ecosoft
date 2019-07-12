@@ -144,13 +144,49 @@
                 android:layout_height="wrap_content"
                 android:text="@string/rank"
                 android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/labelRank2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="1"
+                android:textAlignment="center"
                 android:textColor="#FFFFFF" />
 
-            <ListView
-                android:id="@+id/listRank"
+            <TextView
+                android:id="@+id/labelRank3"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="#030000" />
+                android:layout_height="wrap_content"
+                android:text="2"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF" />
+
+            <TextView
+                android:id="@+id/labelRank4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="3"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF" />
+
+            <TextView
+                android:id="@+id/labelRank5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="4"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF" />
+
+            <TextView
+                android:id="@+id/labelRank6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="5"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF" />
 
         </LinearLayout>
 
@@ -169,21 +205,78 @@
                 android:text="@string/name"
                 android:textAlignment="center"
                 android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:textStyle="bold"
                 tools:layout_conversion_absoluteHeight="20dp"
                 tools:layout_conversion_absoluteWidth="80dp"
                 tools:layout_editor_absoluteX="149dp"
                 tools:layout_editor_absoluteY="303dp" />
 
-            <ListView
-                android:id="@+id/listName"
+            <TextView
+                android:id="@+id/labelName2"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="#000000"
-                android:cacheColorHint="#0C0000"
-                tools:layout_conversion_absoluteHeight="190dp"
-                tools:layout_conversion_absoluteWidth="100dp"
-                tools:layout_editor_absoluteX="139dp"
-                tools:layout_editor_absoluteY="331dp" />
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Robert"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                tools:layout_conversion_absoluteHeight="20dp"
+                tools:layout_conversion_absoluteWidth="80dp"
+                tools:layout_editor_absoluteX="149dp"
+                tools:layout_editor_absoluteY="303dp" />
+
+            <TextView
+                android:id="@+id/labelName3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Harry H"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                tools:layout_conversion_absoluteHeight="20dp"
+                tools:layout_conversion_absoluteWidth="80dp"
+                tools:layout_editor_absoluteX="149dp"
+                tools:layout_editor_absoluteY="303dp" />
+
+            <TextView
+                android:id="@+id/labelName4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Tori"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                tools:layout_conversion_absoluteHeight="20dp"
+                tools:layout_conversion_absoluteWidth="80dp"
+                tools:layout_editor_absoluteX="149dp"
+                tools:layout_editor_absoluteY="303dp" />
+
+            <TextView
+                android:id="@+id/labelName5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Jesse"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                tools:layout_conversion_absoluteHeight="20dp"
+                tools:layout_conversion_absoluteWidth="80dp"
+                tools:layout_editor_absoluteX="149dp"
+                tools:layout_editor_absoluteY="303dp" />
+
+            <TextView
+                android:id="@+id/labelName6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Sunny"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                tools:layout_conversion_absoluteHeight="20dp"
+                tools:layout_conversion_absoluteWidth="80dp"
+                tools:layout_editor_absoluteX="149dp"
+                tools:layout_editor_absoluteY="303dp" />
+
         </LinearLayout>
 
         <LinearLayout
@@ -201,17 +294,78 @@
                 android:text="@string/point"
                 android:textAlignment="center"
                 android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                tools:layout_conversion_absoluteHeight="20dp"
+                tools:layout_conversion_absoluteWidth="80dp"
+                tools:layout_editor_absoluteX="250dp"
+                tools:layout_editor_absoluteY="303dp"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/labelPoints2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="4200"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
                 tools:layout_conversion_absoluteHeight="20dp"
                 tools:layout_conversion_absoluteWidth="80dp"
                 tools:layout_editor_absoluteX="250dp"
                 tools:layout_editor_absoluteY="303dp" />
 
-            <ListView
-                android:id="@+id/listPoints"
+            <TextView
+                android:id="@+id/labelPoints3"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="#000000"
-                android:cacheColorHint="#0C0000" />
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="3600"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                tools:layout_conversion_absoluteHeight="20dp"
+                tools:layout_conversion_absoluteWidth="80dp"
+                tools:layout_editor_absoluteX="250dp"
+                tools:layout_editor_absoluteY="303dp" />
+
+            <TextView
+                android:id="@+id/labelPoints4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="2100"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                tools:layout_conversion_absoluteHeight="20dp"
+                tools:layout_conversion_absoluteWidth="80dp"
+                tools:layout_editor_absoluteX="250dp"
+                tools:layout_editor_absoluteY="303dp" />
+
+            <TextView
+                android:id="@+id/labelPoints5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="1900"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                tools:layout_conversion_absoluteHeight="20dp"
+                tools:layout_conversion_absoluteWidth="80dp"
+                tools:layout_editor_absoluteX="250dp"
+                tools:layout_editor_absoluteY="303dp" />
+
+            <TextView
+                android:id="@+id/labelPoints6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="1250"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                tools:layout_conversion_absoluteHeight="20dp"
+                tools:layout_conversion_absoluteWidth="80dp"
+                tools:layout_editor_absoluteX="250dp"
+                tools:layout_editor_absoluteY="303dp" />
+
         </LinearLayout>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
