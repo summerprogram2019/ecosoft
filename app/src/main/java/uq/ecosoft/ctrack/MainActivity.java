@@ -8,6 +8,7 @@ import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -86,6 +87,20 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         setContentView(R.layout.home);
         initImageView();
         toggleImage(homeImage, "home");
+    }
+
+    public void linkToHomeFromLogin(View view) {
+        EditText editUser  = (EditText) findViewById(R.id.editText);
+        EditText editPassword  = (EditText) findViewById(R.id.editText2);
+
+        String username = editUser.getText().toString();
+        String password = editPassword.getText().toString();
+
+        if (username.equals("HarryG") && password.equals("Russian")) {
+            setContentView(R.layout.home);
+            initImageView();
+            toggleImage(homeImage, "home");
+        }
     }
 
     public void initImageView() {
