@@ -5,18 +5,21 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
-import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import lombok.extern.java.Log;
 import uq.ecosoft.ctrack.model.StepCounter.StepDetector;
 import uq.ecosoft.ctrack.model.StepCounter.StepListener;
 
+@Log
 public class MainActivity extends AppCompatActivity implements SensorEventListener, StepListener {
     private TextView textView;
     private StepDetector simpleStepDetector;
@@ -31,12 +34,10 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     private ImageView socialImage;
     private ImageView profileImage;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
-        return;
     }
 
     public void linkToLogin(View view) {
@@ -51,6 +52,28 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         setContentView(R.layout.home);
         initImageView();
         toggleImage(homeImage, "home");
+    }
+
+    public void linkToHomeFromLogin(View view) {
+        EditText editUser  = (EditText) findViewById(R.id.editText);
+        EditText editPassword  = (EditText) findViewById(R.id.editText2);
+
+        String username = editUser.getText().toString();
+        String password = editPassword.getText().toString();
+
+        if (username.equals("HarryG") && password.equals("Russian")) {
+            setContentView(R.layout.home);
+            initImageView();
+            toggleImage(homeImage, "home");
+        } else {
+            AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this).create();
+            alertDialog.setTitle("Invalid Credentials");
+            alertDialog.setMessage("The username or password you entered were incorrect. " +
+                    "Please enter the correct credentials and try again");
+            alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, "OK",
+                    (dialogInterface, i) -> dialogInterface.dismiss());
+            alertDialog.show();
+        }
     }
 
     public void initImageView() {
