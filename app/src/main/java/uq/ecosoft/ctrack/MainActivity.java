@@ -1,5 +1,6 @@
 package uq.ecosoft.ctrack;
 
+import android.graphics.Color;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -37,42 +38,6 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
         return;
-
-        /*
-        // Get an instance of the SensorManager
-        sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
-        accel = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
-        simpleStepDetector = new StepDetector();
-        simpleStepDetector.registerListener(this);
-
-       textView = (TextView) findViewById(R.id.tv_steps);
-        Button BtnStart = (Button) findViewById(R.id.btn_start);
-        Button BtnStop = (Button) findViewById(R.id.btn_stop);
-
-
-
-        BtnStart.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View arg0) {
-
-                numSteps = 0;
-                sensorManager.registerListener(MainActivity.this, accel, SensorManager.SENSOR_DELAY_FASTEST);
-
-            }
-        });
-
-
-        BtnStop.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View arg0) {
-
-                sensorManager.unregisterListener(MainActivity.this);
-
-            }
-        });
-        */
     }
 
     public void linkToLogin(View view) {
@@ -152,6 +117,36 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         setContentView(R.layout.step_tracking);
         initImageView();
         toggleImage(activityImage, "activity");
+
+        // Get an instance of the SensorManager
+        sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
+        accel = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+        simpleStepDetector = new StepDetector();
+        simpleStepDetector.registerListener(this);
+
+        textView = (TextView) findViewById(R.id.tv_steps);
+        final Button BtnStart = (Button) findViewById(R.id.btn_start_stop);
+        Boolean started = false;
+
+
+        BtnStart.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+                if (BtnStart.getText().toString().toLowerCase().equals("start tracking")) {
+                    numSteps = 0;
+                    sensorManager.registerListener(MainActivity.this, accel, SensorManager.SENSOR_DELAY_FASTEST);
+                    BtnStart.setBackgroundColor(Color.RED);
+                    BtnStart.setText("STOP TRACKING");
+                } else {
+                    sensorManager.unregisterListener(MainActivity.this);
+                    BtnStart.setBackgroundColor(Color.GREEN);
+                    BtnStart.setText("START TRACKING");
+                }
+
+
+            }
+        });
     }
 
     public void linkToGoals(View view) {
