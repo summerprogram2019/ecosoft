@@ -35,8 +35,9 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
+        return;
 
-
+        /*
         // Get an instance of the SensorManager
         sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
         accel = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
@@ -70,7 +71,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
             }
         });
-
+        */
     }
 
     public void linkToLogin(View view) {
