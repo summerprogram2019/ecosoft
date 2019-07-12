@@ -35,8 +35,9 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
+        return;
 
-
+        /*
         // Get an instance of the SensorManager
         sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
         accel = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
@@ -70,7 +71,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
             }
         });
-
+        */
     }
 
     public void linkToLogin(View view) {
@@ -98,12 +99,16 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         switch (imageName) {
             case "home": {
                 img.setImageResource(R.drawable.new_home2);
+                break;
             }case "activity": {
                 img.setImageResource(R.drawable.new_activity2);
+                break;
             }case "social": {
                 img.setImageResource(R.drawable.new_social2);
+                break;
             }case "profile": {
                 img.setImageResource(R.drawable.new_profile2);
+                break;
             }default: {
                 System.exit(-1);
             }
@@ -128,22 +133,34 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         toggleImage(activityImage, "activity");
     }
 
-    public void linkToSteps(View view) { setContentView(R.layout.step_tracking); }
+    public void linkToSteps(View view) {
+        setContentView(R.layout.step_tracking);
+        initImageView();
+        toggleImage(activityImage, "activity");
+    }
 
     public void linkToGoals(View view) {
         setContentView(R.layout.goals);
+        initImageView();
+        toggleImage(activityImage, "activity");
     }
 
     public void linkToChallenges(View view) {
         setContentView(R.layout.daily_challenges2);
+        initImageView();
+        toggleImage(activityImage, "activity");
     }
 
     public void linkToFuture(View view) {
         setContentView(R.layout.future_activities2);
+        initImageView();
+        toggleImage(activityImage, "activity");
     }
 
     public void linkToSocial(View view) {
         setContentView(R.layout.social_leaderboard);
+        initImageView();
+        toggleImage(socialImage, "social");
     }
 
     public void linkToFriends(View view) {
@@ -154,6 +171,8 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
     public void linkToManage(View view) {
         setContentView(R.layout.social_manage_friends);
+        initImageView();
+        toggleImage(socialImage, "social");
     }
 
     public void linkToProfile(View view) {
@@ -164,23 +183,18 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
     public void linkToPoints(View view) {
         setContentView(R.layout.points);
+        initImageView();
+        toggleImage(profileImage, "profile");
     }
 
     public void linkToGarden(View view) {
         setContentView(R.layout.garden);
+        initImageView();
+        toggleImage(profileImage, "profile");
     }
 
     public void linkToSettings(View view) {
         setContentView(R.layout.settings);
-    }
-
-    public void basicBtn(View view) {
-        TextView lb = findViewById(R.id.inputUserName);
-        if (lb.getText().equals(getResources().getString(R.string.hello_world))) {
-            lb.setText(getResources().getString(R.string.goodbye_world));
-        } else {
-            lb.setText(getResources().getString(R.string.hello_world));
-        }
     }
 
     @Override
