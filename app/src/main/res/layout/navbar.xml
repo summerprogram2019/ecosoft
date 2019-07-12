@@ -23,23 +23,23 @@
             android:id="@+id/homeContainer"
             android:layout_width="96dp"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:textAlignment="center"
-            android:onClick="linkToHome"
             android:clickable="true"
-            android:focusable="true">
+            android:focusable="true"
+            android:onClick="linkToHome"
+            android:orientation="vertical"
+            android:textAlignment="center">
 
             <ImageView
                 android:id="@+id/imageHome"
                 android:layout_width="55dp"
                 android:layout_height="30dp"
                 android:layout_gravity="center"
-                android:paddingTop="10dp"
                 android:clickable="true"
                 android:contentDescription="@string/home"
                 android:focusable="true"
                 android:onClick="linkToHome"
-                app:srcCompat="@drawable/green_home" />
+                android:paddingTop="10dp"
+                app:srcCompat="@drawable/new_home" />
 
             <TextView
                 android:id="@+id/labelHome"
@@ -62,23 +62,23 @@
             android:id="@+id/activitiesContainer"
             android:layout_width="96dp"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:textAlignment="center"
-            android:onClick="linkToActivities"
             android:clickable="true"
-            android:focusable="true">
+            android:focusable="true"
+            android:onClick="linkToActivities"
+            android:orientation="vertical"
+            android:textAlignment="center">
 
             <ImageView
                 android:id="@+id/imageActivities"
                 android:layout_width="55dp"
                 android:layout_height="30dp"
                 android:layout_gravity="center"
-                android:paddingTop="10dp"
                 android:clickable="true"
                 android:contentDescription="@string/activities"
                 android:focusable="true"
-                android:onClick="linkToHome"
-                app:srcCompat="@drawable/green_activities" />
+                android:onClick="linkToActivities"
+                android:paddingTop="10dp"
+                app:srcCompat="@drawable/new_activity" />
 
             <TextView
                 android:id="@+id/labelActivities"
@@ -101,23 +101,23 @@
             android:id="@+id/socialContainer"
             android:layout_width="96dp"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:textAlignment="center"
-            android:onClick="linkToSocial"
             android:clickable="true"
-            android:focusable="true">
+            android:focusable="true"
+            android:onClick="linkToSocial"
+            android:orientation="vertical"
+            android:textAlignment="center">
 
             <ImageView
                 android:id="@+id/imageSocial"
                 android:layout_width="55dp"
                 android:layout_height="30dp"
                 android:layout_gravity="center"
-                android:paddingTop="10dp"
                 android:clickable="true"
                 android:contentDescription="@string/social"
                 android:focusable="true"
                 android:onClick="linkToSocial"
-                app:srcCompat="@drawable/green_social" />
+                android:paddingTop="10dp"
+                app:srcCompat="@drawable/new_social" />
 
             <TextView
                 android:id="@+id/labelSocial"
@@ -140,23 +140,23 @@
             android:id="@+id/profileContainer"
             android:layout_width="96dp"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:textAlignment="center"
-            android:onClick="linkToProfile"
             android:clickable="true"
-            android:focusable="true">
+            android:focusable="true"
+            android:onClick="linkToProfile"
+            android:orientation="vertical"
+            android:textAlignment="center">
 
             <ImageView
                 android:id="@+id/imageProfile"
                 android:layout_width="55dp"
                 android:layout_height="30dp"
                 android:layout_gravity="center"
-                android:paddingTop="10dp"
                 android:clickable="true"
-                android:onClick="linkToProfile"
                 android:contentDescription="@string/profile"
                 android:focusable="true"
-                app:srcCompat="@drawable/green_profile" />
+                android:onClick="linkToProfile"
+                android:paddingTop="10dp"
+                app:srcCompat="@drawable/new_profile" />
 
             <TextView
                 android:id="@+id/labelProfile"

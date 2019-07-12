@@ -7,6 +7,16 @@
     android:layout_height="match_parent"
     android:background="#F5F6F8">
 
+    <ImageView
+        android:id="@+id/imageBg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.13"
+        app:srcCompat="@drawable/gradient_bg"
+        tools:layout_editor_absoluteX="0dp" />
+
     <ImageButton
         android:id="@+id/imageBack"
         android:layout_width="50dp"
@@ -53,11 +63,11 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:backgroundTint="@android:color/black"
+        android:backgroundTint="@android:color/white"
         android:ems="10"
         android:inputType="numberPassword"
-        android:textColor="#0A000C"
-        android:textColorHint="#070000"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -72,7 +82,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:text="@string/verification_code"
-        android:textColor="#090000"
+        android:textColor="#FFFEFE"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -96,6 +106,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.08"
-        app:srcCompat="@drawable/logo"
-        tools:srcCompat="@drawable/logo" />
+        app:srcCompat="@drawable/logo_trans" />
 </androidx.constraintlayout.widget.ConstraintLayout>

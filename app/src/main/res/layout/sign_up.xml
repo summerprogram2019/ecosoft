@@ -7,6 +7,16 @@
     android:layout_height="match_parent"
     android:background="#F5F6F8">
 
+    <ImageView
+        android:id="@+id/imageBg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.13"
+        app:srcCompat="@drawable/gradient_bg"
+        tools:layout_editor_absoluteX="0dp" />
+
     <ImageButton
         android:id="@+id/imageBack"
         android:layout_width="50dp"
@@ -40,8 +50,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.039"
-        app:srcCompat="@drawable/logo"
-        tools:srcCompat="@drawable/logo" />
+        app:srcCompat="@drawable/logo_trans" />
 
     <Button
         android:id="@+id/buttonVerify"
@@ -99,7 +108,7 @@
             android:focusable="true"
             android:onClick="linkToTcs"
             android:text="@string/terms_conditions"
-            android:textColor="#070000"
+            android:textColor="#FFFFFF"
             android:textSize="18sp" />
     </LinearLayout>
 
@@ -111,7 +120,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:text="@string/password"
-        android:textColor="#070000"
+        android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.244"
@@ -127,7 +136,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:text="@string/email"
-        android:textColor="#070000"
+        android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.244"
@@ -142,7 +151,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:text="@string/username"
-        android:textColor="#070000"
+        android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.264"
@@ -158,10 +167,10 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:backgroundTint="@android:color/black"
+        android:backgroundTint="@android:color/white"
         android:ems="10"
         android:inputType="textShortMessage|textPersonName|text|textEmailAddress"
-        android:textColor="#070000"
+        android:textColor="#FFFFFF"
         android:textColorHighlight="#4CAF50"
         android:textColorHint="#070000"
         android:textColorLink="#4CAF50"
@@ -181,10 +190,10 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:backgroundTint="@android:color/black"
+        android:backgroundTint="@android:color/white"
         android:ems="10"
         android:inputType="textPassword"
-        android:textColor="#070000"
+        android:textColor="#FFFFFF"
         android:textColorHighlight="#4CAF50"
         android:textColorHint="#070000"
         android:textColorLink="#4CAF50"
@@ -204,10 +213,10 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:backgroundTint="@android:color/black"
+        android:backgroundTint="@android:color/white"
         android:ems="10"
         android:inputType="textPersonName"
-        android:textColor="#070000"
+        android:textColor="#FFFFFF"
         android:textColorHighlight="#4CAF50"
         android:textColorHint="#070000"
         android:textColorLink="#4CAF50"

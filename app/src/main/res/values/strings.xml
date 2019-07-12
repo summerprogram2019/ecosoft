@@ -14,6 +14,24 @@
         <item>Daily Challenges</item>
         <item>Future Activities</item>
     </string-array>
+    <string-array name="activities2">
+        <item>Goals</item>
+        <item>Step Tracking</item>
+        <item>Daily Challenges</item>
+        <item>Future Activities</item>
+    </string-array>
+    <string-array name="activities3">
+        <item>Daily Challenges</item>
+        <item>Goals</item>
+        <item>Step Tracking</item>
+        <item>Future Activities</item>
+    </string-array>
+    <string-array name="activities4">
+        <item>Future Activities</item>
+        <item>Daily Challenges</item>
+        <item>Goals</item>
+        <item>Step Tracking</item>
+    </string-array>
     <string name="terms_conditions">Accept Terms and Conditions</string>
     <string name="verify">Verify</string>
     <string name="username">User Name</string>
@@ -42,6 +60,10 @@
         <item>Environmental Impact</item>
         <item>Garden</item>
     </string-array>
+    <string-array name="profiles2">
+        <item>Garden</item>
+        <item>Environmental Impact</item>
+    </string-array>
     <string name="log_out">Log out</string>
     <string-array name="time_frame">
         <item>Hour</item>
@@ -63,4 +85,9 @@
     <string name="rank">Rank</string>
     <string name="name">Name</string>
     <string name="point">Points</string>
+    <string-array name="setting">
+        <item>Personal Details</item>
+        <item>Privacy</item>
+        <item>Upgrade</item>
+    </string-array>
 </resources>

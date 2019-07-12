@@ -7,7 +7,7 @@
     android:background="@drawable/gradient_bg">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/imageGarden"
         android:layout_width="120dp"
         android:layout_height="150dp"
         android:layout_marginTop="60dp"
@@ -20,7 +20,7 @@
         android:layout_width="120dp"
         android:layout_height="50dp"
         android:layout_marginTop="185dp"
-        android:layout_below="@+id/imageView"
+        android:layout_below="@+id/imageGarden"
         app:srcCompat="@drawable/logo_font3"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
@@ -29,16 +29,17 @@
         android:id="@+id/editText"
         android:layout_width="275dp"
         android:layout_height="55dp"
-        android:layout_below="@+id/imageView"
+        android:layout_below="@+id/imageGarden"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="75dp"
         android:background="@drawable/bottom_border"
         android:ems="10"
         android:fontFamily="sans-serif-smallcaps"
         android:gravity="center"
-        android:text="@string/user_name"
+        android:hint="@string/user_name"
         android:inputType="textPersonName"
         android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF"
         android:typeface="sans" />
 
     <ImageView
@@ -55,17 +56,18 @@
         android:id="@+id/editText2"
         android:layout_width="275dp"
         android:layout_height="55dp"
-        android:layout_below="@+id/imageView"
+        android:layout_below="@+id/imageGarden"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="131dp"
         android:background="@drawable/bottom_border"
         android:ems="10"
         android:fontFamily="sans-serif-smallcaps"
         android:gravity="center"
-        android:text="@string/password"
+        android:hint="@string/password"
+        android:inputType="textPassword"
         android:textColor="#FFFFFF"
-        android:typeface="sans"
-        android:inputType="textPassword" />
+        android:textColorHint="#FFFFFF"
+        android:typeface="sans" />
 
     <ImageView
         android:id="@+id/imageView4"
@@ -81,11 +83,12 @@
         android:id="@+id/button"
         android:layout_width="275dp"
         android:layout_height="55dp"
-        android:layout_below="@+id/imageView"
+        android:layout_below="@+id/imageGarden"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="215dp"
         android:background="@color/greenNeon"
         android:fontFamily="sans-serif-smallcaps"
+        android:onClick="linkToHomeFromLogin"
         android:text="@string/log_in"
         android:textColor="#FFFFFF"
         android:typeface="sans" />
@@ -94,10 +97,13 @@
         android:id="@+id/textView"
         android:layout_width="200dp"
         android:layout_height="50dp"
-        android:layout_below="@+id/imageView"
+        android:layout_below="@+id/imageGarden"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="285dp"
+        android:clickable="true"
+        android:focusable="true"
         android:gravity="center_horizontal"
+        android:onClick="linkToHome"
         android:text="@string/forgot_password"
         android:textColor="#FFFFFF"
         android:typeface="sans" />
@@ -106,13 +112,14 @@
         android:id="@+id/textView2"
         android:layout_width="250dp"
         android:layout_height="50dp"
-        android:layout_below="@+id/imageView"
+        android:layout_below="@+id/imageGarden"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="400dp"
-        android:text="@string/new_account"
+        android:clickable="true"
+        android:focusable="true"
         android:gravity="center_horizontal"
+        android:onClick="linkToSignUp"
+        android:text="@string/new_account"
         android:textColor="@color/greenNeon"
         android:typeface="sans" />
-
-
 </RelativeLayout>
