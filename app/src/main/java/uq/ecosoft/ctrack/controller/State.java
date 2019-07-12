@@ -11,7 +11,7 @@ public class State {
     public static int uid;
 
     @Getter @Setter
-    public static boolean loggedIn;
+    public static boolean loggedIn = false;
 
     /**
      * Helper function to login

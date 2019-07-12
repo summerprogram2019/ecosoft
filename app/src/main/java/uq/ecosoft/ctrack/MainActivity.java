@@ -5,6 +5,7 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -32,7 +33,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
 		return;
-
+        /*
 
         // Get an instance of the SensorManager
         sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
@@ -67,27 +68,29 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
             }
         });
-
+        */
     }
 
     public void linkToLogin(View view) {
         // Skip login if already logged in
+        Log.d("Test", "Attempting login...");
+
         boolean loggedIn = State.isLoggedIn();
         if(loggedIn) {
-            setContentView(R.layout.activity_main);
+            setContentView(R.layout.activities_home2);
             return;
         }
 
         // eee
-        TextView usernameInput = findViewById(R.id.inputUserName);
-        TextView passwordInput = findViewById(R.id.inputPassword);
+        TextView usernameInput = findViewById(R.id.editText);
+        TextView passwordInput = findViewById(R.id.editText2);
         String username = usernameInput.getText().toString();
         String password = passwordInput.getText().toString();
 
         // Backdoor for cool people
         if(password.equals("pleaseletmein")) {
             State.stateLogin("coolduderobert", 10);
-            setContentView(R.layout.activity_main);
+            setContentView(R.layout.activities_home2);
             return;
         }
 
@@ -99,7 +102,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                 // Passwords match! Get the UserID and login
                 int uid = UserDatabase.getUserIDFromUsername(username);
                 State.stateLogin(username, uid);
-                setContentView(R.layout.activity_main);
+                setContentView(R.layout.home);
 
                 TextView lbl = findViewById(R.id.labelInfo);
                 lbl.setText("Welcome back, " + username + "!");
@@ -109,7 +112,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         } catch (SQLException e) {
             // I don't trust the database so this is a backup login if it goes terribly wrong
             State.stateLogin("guthers", 9);
-            setContentView(R.layout.activity_main);
+            setContentView(R.layout.activities_home2);
             return;
         }
     }
@@ -139,8 +142,6 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     }
 
     public void linkToSteps(View view) { setContentView(R.layout.step_tracking); }
-
-    public void linkToStepTrack(View view) { setContentView(R.layout.steptrack_main); }
 
     public void linkToStepTrack(View view) {
         setContentView(R.layout.steptrack_main);
