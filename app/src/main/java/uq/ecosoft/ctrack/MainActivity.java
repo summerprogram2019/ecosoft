@@ -11,9 +11,16 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.sql.SQLException;
+
+import lombok.extern.java.Log;
+import uq.ecosoft.ctrack.controller.DatabaseConnector;
+import uq.ecosoft.ctrack.controller.UserDatabase;
 import uq.ecosoft.ctrack.model.StepCounter.StepDetector;
 import uq.ecosoft.ctrack.model.StepCounter.StepListener;
+import uq.ecosoft.ctrack.model.User;
 
+@Log
 public class MainActivity extends AppCompatActivity implements SensorEventListener, StepListener {
     private TextView textView;
     private StepDetector simpleStepDetector;
