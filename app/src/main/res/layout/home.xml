@@ -59,71 +59,86 @@
         app:layout_constraintVertical_bias="0.0"
         tools:layout_editor_absoluteX="-16dp" />
 
-    <TextView
-        android:id="@+id/labelArticleName"
-        android:layout_width="229dp"
-        android:layout_height="75dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:background="#00090000"
-        android:text="Which type of flower are you?"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.216" />
-
-    <TextView
-        android:id="@+id/labelInfo"
-        android:layout_width="229dp"
-        android:layout_height="54dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:background="#00090000"
-        android:text="The icecaps care melting and the polar bears are in danger."
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.522"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.319" />
-
-    <Button
-        android:id="@+id/buttonLike"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:background="#4CAF50"
-        android:text="@string/like"
-        android:textAllCaps="false"
-        android:textSize="18sp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.27"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/imageBg"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.568" />
+        app:layout_constraintVertical_bias="0.81">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="229dp"
-        android:layout_height="100dp"
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="300dp"
+            android:layout_height="150dp"
+            android:background="#00000000"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/ice" />
+
+        <TextView
+            android:id="@+id/labelArticleName"
+            android:layout_width="300dp"
+            android:layout_height="27dp"
+            android:background="#00090000"
+            android:text="Polar Bears: Extinction"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/labelInfo"
+            android:layout_width="300dp"
+            android:layout_height="54dp"
+            android:layout_marginBottom="8dp"
+            android:background="#00090000"
+            android:text="The icecaps are melting. The polar bears are in danger. Only you can save them." />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:background="#00000000"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.367"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/imageBg"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.421"
-        app:srcCompat="@drawable/ice" />
+        app:layout_constraintVertical_bias="0.19999999">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="300dp"
+            android:layout_height="150dp"
+            android:background="#00000000"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/ice" />
+
+        <TextView
+            android:id="@+id/labelArticleName"
+            android:layout_width="300dp"
+            android:layout_height="27dp"
+            android:background="#00090000"
+            android:text="Polar Bears: Extinction"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/labelInfo"
+            android:layout_width="300dp"
+            android:layout_height="54dp"
+            android:layout_marginBottom="8dp"
+            android:background="#00090000"
+            android:text="The icecaps are melting. The polar bears are in danger. Only you can save them." />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
