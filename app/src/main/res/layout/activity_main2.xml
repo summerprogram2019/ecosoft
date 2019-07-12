@@ -117,6 +117,4 @@
         android:text="@string/new_account"
         android:textColor="@color/greenNeon"
         android:typeface="sans" />
-
-
 </RelativeLayout>
